@@ -10,8 +10,8 @@ and is administered by Research Infrastructure Services (RIS).
 If you need help getting set up on Compute1, or if you notice something on this page is out of date,
 please contact |compute1-getting-started-contact|.
 
-Set up VPN
-----------
+Set up VPN access
+-----------------
 To access Compute1 from off-campus, you will need to use a VPN. Instructions for accessing
 the WashU VPNs can be found here: |vpn-instructions|. For help with the VPNs you should contact
 |vpn-contact|.
@@ -24,7 +24,7 @@ the WashU VPNs can be found here: |vpn-instructions|. For help with the VPNs you
 
 .. _access-request:
 
-Request Access
+Request access
 --------------
 
 To get access to Compute1 you need to submit the following: `Compute1 Access Request`_. To submit
