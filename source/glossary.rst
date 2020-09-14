@@ -13,15 +13,16 @@ Terminology
    
    node
       Each physical machine (server) in the cluster is node. There are many nodes in the Compute1 cluster. There are two
-      types of nodes on Compute1: :term:`head nodes`, and :term:`exec nodes`.
+      types of nodes on Compute1: :term:`head nodes <head node>`, and :term:`exec nodes`.
 
-   head nodes
-      Head nodes are where you land when you SSH into Compute1. Head nodes have names like :code:`compute1-client-3`.
+   head node
+      When you SSH into Compute1 you will land on one of the head nodes. Head nodes are essentially the login servers for Compute1. These
+      head nodes have names like :code:`compute1-client-3`.
       When you're on a head node you can interact with :term:`LSF` to submit jobs, kills :term:`jobs <job>`, see how much acticity is in each queue, etc.,
-      and you can navigate around the filesystem and modify files. 
+      and you can navigate around the filesystem and modify files. You should not run CPU-intensive things on a head node.
 
    exec nodes
-      Your :term:`jobs <job>` are run on exec nodes. Both :term:`interactive jobs <interactive job>`, and :term:`batch jobs <batch job>` are run on :term:`exec nodes`. 
+      Your :term:`jobs <job>` run on exec nodes. Both :term:`interactive jobs <interactive job>`, and :term:`batch jobs <batch job>` are run on :term:`exec nodes`. 
       
    job
       A bash script that executes things. At the top of your job script, you specify resource requirements for 
@@ -87,3 +88,9 @@ Terminology
 
    environment variables
       These are variables (in your terminal) which some programs (e.g., :term:`LSF`) use to configure various settings.
+
+   queue
+      The job queues on Compute1 are the locations that you can submit a job to. Our group can use the :code:`rvmartin`, 
+      :code:`rvmartin-interactive`, :code:`general`, and :code:`general-interactive` queues. The number of available
+      :term:`slots <slot>` in a queue can been seen with the :code:`bqueues` command. Interactive jobs must be 
+      submitted to the interactive queues.

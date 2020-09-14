@@ -9,6 +9,8 @@ Links
 Quality tutorials for getting started with Linux:
 
 * `University of Surry's Unix Tutorial <http://www.ee.surrey.ac.uk/Teaching/Unix/index.html>`_ (tutorial 1-5 are good for our work)
+* vim
+* ssh
 
 Resources for learning about Compute1:
 
