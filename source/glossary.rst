@@ -43,7 +43,7 @@ Terminology
       The scheduler is the software that manages the cluster (Compute1). Specifically it manages the clusters resources. You submit your
       job to the scheduler, then the scheduler finds an exec node with available resources (sufficient to satisfy your job's requirements),
       allocates the necessary resources on that node for your job, and then starts your job running on that node. All jobs go through the 
-      scheduler.
+      scheduler. Compute1 uses the :term:`LSF` scheduler produced by IBM.
 
    container
       Your job will run on an exec node inside a container. A container is a bundle of software. Our group has several containers with 
@@ -77,10 +77,13 @@ Terminology
       :code:`/storage1/fs1/rvmartin/Active/Shared`. In your jobs, this directory will be mounted to :code:`/shared`.
 
    $HOME
-      This is your home directory (alias: :code:`~`). It is restricted to a couple Gb. It is intended for configuration scripts,
-      job scripts, etc. You should not put data here. You can always get here by :code:`cd ~` or equivalently :code:`cd $HOME`.
+      This is your home directory (alias: :code:`~`). You should not put data here. This directory is intended
+      for configuration scripts, job scripts, etc. You can always get here by :code:`cd ~` or equivalently :code:`cd $HOME`.
 
    absolute path
       The full path to a file. Absolute paths start with :code:`/` followed by the entire path to the file. For example,
       :code:`/storage1/fs1/rvmartin/Active/wustlkey/project1/file1.txt` is an absolute path. If you were in the directory
       :code:`/storage1/fs1/rvmartin/Active/wustlkey` the relative path to the same file would be :code:`project1/file1.txt`.
+
+   environment variables
+      These are variables (in your terminal) which some programs (e.g., :term:`LSF`) use to configure various settings.

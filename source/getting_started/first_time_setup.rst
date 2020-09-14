@@ -1,3 +1,5 @@
+.. include:: /fillers/contacts.rst
+
 First time setup
 ================
 
@@ -13,6 +15,8 @@ By the end of this section you will have:
 2. configured :code:`bash` to automatically load :code:`~/lsf-conf.rc` when you log on to Compute1
 3. created :code:`~/interactive.bsub`, which is a simple interactive job script
 
+If you need help any any point in this section, please contact |compute1-getting-started-contact|.
+
 Before proceeding, log on to Compute1 and make sure you are in your :code:`$HOME` directory.
 
 .. code-block:: console
@@ -22,7 +26,7 @@ Before proceeding, log on to Compute1 and make sure you are in your :code:`$HOME
 Create :code:`lsf-conf.rc`
 --------------------------
 
-Here, you are going to create :code:`lsf-conf.rc`. This file sets environment variables that configure some
+Here, you are going to create :code:`lsf-conf.rc`. This file sets :term:`environment variables` that configure some
 useful :term:`LSF` settings. Make sure you are logged on to Compute1 and in your :code:`$HOME` directory. 
 
 Download our :code:`lsf-conf.rc` template
@@ -31,14 +35,14 @@ Download our :code:`lsf-conf.rc` template
 
    [wustlkey@compute1-client-1 ~]$ wget -q https://raw.githubusercontent.com/Atmospheric-Composition-Analysis-Group/compute1/master/lsf-conf.rc
 
-Find your :term:`project directory`. List the contents of :code:`/storage1/fs1/rvmartin/Active/`, and note the directory that looks like
-it is yours (it's most likely your WUSTL key).
+Next, find your :term:`project directory`. Do this by listing the contents of :code:`/storage1/fs1/rvmartin/Active/`, and noting the directory that looks like
+it is yours (it is most likely your WUSTL key).
 
 .. code-block:: console
 
    [wustlkey@compute1-client-1 ~]$ ls /storage1/fs1/rvmartin/Active/
 
-Open :code:`lsf-conf.rc`
+Now, open :code:`lsf-conf.rc`
 
 .. code-block:: console
 
