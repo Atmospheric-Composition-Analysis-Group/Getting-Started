@@ -8,6 +8,7 @@ Welcome to the group!
 
    getting_started/join_slack
    getting_started/get_compute1_access
+   getting_started/first_time_setup
 
 
 .. toctree::
@@ -15,4 +16,5 @@ Welcome to the group!
    :caption: Other resources:
 
    compute1_info
+   glossary
    contacts
