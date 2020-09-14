@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. First time setup &#8212; Getting Started  documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. Submitting a job" href="submitting_a_job.html" />
+    <link rel="prev" title="2. Get access to Compute1" href="get_compute1_access.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="first-time-setup">
+<h1><span class="section-number">3. </span>First time setup<a class="headerlink" href="#first-time-setup" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section uses terminology that you might not be familiar with. Please refer to the
+<a class="reference internal" href="../glossary.html#acag-glossary"><span class="std std-ref">glossary</span></a> for definitions.</p>
+</div>
+<p>This section describes the steps to set up your environment on Compute1, so you can start using Compute1 effectively.
+By the end of this section you will have:</p>
+<ol class="arabic simple">
+<li><p>created <code class="code docutils literal notranslate"><span class="pre">~/lsf-conf.rc</span></code>, which configures some useful <a class="reference internal" href="../glossary.html#term-LSF"><span class="xref std std-term">LSF</span></a> settings</p></li>
+<li><p>configured <code class="code docutils literal notranslate"><span class="pre">bash</span></code> to automatically load <code class="code docutils literal notranslate"><span class="pre">~/lsf-conf.rc</span></code> when you log on to Compute1</p></li>
+<li><p>created <code class="code docutils literal notranslate"><span class="pre">~/interactive.bsub</span></code>, which is a simple interactive job script</p></li>
+</ol>
+<p>If you need help any any point in this section, please contact <a class="reference external" href="mailto:liam&#46;bindle&#37;&#52;&#48;wustl&#46;edu">Liam Bindle</a>.</p>
+<p>Before proceeding, log on to Compute1 and make sure you are in your <code class="code docutils literal notranslate"><span class="pre">$HOME</span></code> directory.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh wustlkey@compute1-client-1.ris.wustl.edu
+</pre></div>
+</div>
+<div class="section" id="create-lsf-conf-rc">
+<h2><span class="section-number">3.1. </span>Create <code class="code docutils literal notranslate"><span class="pre">lsf-conf.rc</span></code><a class="headerlink" href="#create-lsf-conf-rc" title="Permalink to this headline">¶</a></h2>
+<p>Here, you are going to create <code class="code docutils literal notranslate"><span class="pre">lsf-conf.rc</span></code>. This file sets <a class="reference internal" href="../glossary.html#term-environment-variables"><span class="xref std std-term">environment variables</span></a> that configure some
+useful <a class="reference internal" href="../glossary.html#term-LSF"><span class="xref std std-term">LSF</span></a> settings. Make sure you are logged on to Compute1 and in your <code class="code docutils literal notranslate"><span class="pre">$HOME</span></code> directory.</p>
+<p>Download our <code class="code docutils literal notranslate"><span class="pre">lsf-conf.rc</span></code> template</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey@compute1-client-1 ~]$</span> wget -q https://raw.githubusercontent.com/Atmospheric-Composition-Analysis-Group/compute1/master/lsf-conf.rc
+</pre></div>
+</div>
+<p>Next, find your <a class="reference internal" href="../glossary.html#term-project-directory"><span class="xref std std-term">project directory</span></a>. Do this by listing the contents of <code class="code docutils literal notranslate"><span class="pre">/storage1/fs1/rvmartin/Active/</span></code>, and noting the directory that looks like
+it is yours (it is most likely your WUSTL key).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey@compute1-client-1 ~]$</span> ls /storage1/fs1/rvmartin/Active/
+</pre></div>
+</div>
+<p>Now, open <code class="code docutils literal notranslate"><span class="pre">lsf-conf.rc</span></code></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey@compute1-client-1 ~]$</span> vim lsf-conf.rc
+</pre></div>
+</div>
+<p>and modify <code class="code docutils literal notranslate"><span class="pre">MY_PROJECTS_DIR</span></code> so that it points to your project directory (it needs to be the <a class="reference internal" href="../glossary.html#term-absolute-path"><span class="xref std std-term">absolute path</span></a>).
+Save <code class="code docutils literal notranslate"><span class="pre">~/lsf-conf.rc</span></code>.</p>
+<p>Now, you can load these setting like so</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey@compute1-client-1 ~]$</span> <span class="nb">source</span> lsf-conf.rc
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="code docutils literal notranslate"><span class="pre">MY_PROJECTS_DIR</span></code> is the only variable you need to modify in <code class="code docutils literal notranslate"><span class="pre">lsf-conf.rc</span></code>.</p>
+</div>
+</div>
+<div class="section" id="auto-load-lsf-settings">
+<h2><span class="section-number">3.2. </span>Auto-load LSF settings<a class="headerlink" href="#auto-load-lsf-settings" title="Permalink to this headline">¶</a></h2>
+<p>You are going to want to <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">lsf-conf.rc</span></code> everytime you log on to Compute1. Therefore, you can add some lines
+to <code class="code docutils literal notranslate"><span class="pre">~/.bashrc</span></code> to do this automatically. Open <code class="code docutils literal notranslate"><span class="pre">~/.bashrc</span></code></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey@compute1-client-1 ~]$</span> vim .bashrc
+</pre></div>
+</div>
+<p>and add the following at the bottom</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Source ~/lsf-conf.rc we land on a head node</span>
+<span class="k">if</span> <span class="k">$(</span>hostname <span class="p">|</span> grep -q <span class="s2">&quot;compute1-client&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">source</span> <span class="nv">$HOME</span>/lsf-conf.rc
+<span class="k">fi</span>
+</pre></div>
+</div>
+<p>This snippet will automatically load your LSF settings when you log on to Compute1.</p>
+<p>Now, check that your LSF settings are being auto-loaded properly. To do this, log off and then
+log back in (this is to trigger the automatic-loading of your LSF settings).</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey@compute1-client-1 ~]$</span> <span class="nb">exit</span>
+<span class="gp">$</span> ssh wustlkey@compute1-client-1.ris.wustl.edu
+<span class="gp">[wustlkey@compute1-client-1 ~]$</span>
+</pre></div>
+</div>
+<p>Then check that <code class="code docutils literal notranslate"><span class="pre">MY_PROJECTS_DIR</span></code> was automatically set.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey.bindle@compute1-client-1 ~]$</span> <span class="nb">echo</span> <span class="nv">$MY_PROJECTS_DIR</span>
+<span class="go">/storage1/fs1/rvmartin/Active/wustlkey</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="download-starter-job">
+<h2><span class="section-number">3.3. </span>Download starter job<a class="headerlink" href="#download-starter-job" title="Permalink to this headline">¶</a></h2>
+<p>Lastly, download <code class="code docutils literal notranslate"><span class="pre">interactive.bsub</span></code>. This is a basic <a class="reference internal" href="../glossary.html#term-interactive-job"><span class="xref std std-term">interactive job</span></a> script. In the future, you can expand on it as you need,
+but in the next section we will use it to get familiar with Compute1.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey@compute1-client-1 ~]$</span> wget -q https://raw.githubusercontent.com/Atmospheric-Composition-Analysis-Group/compute1/master/interactive.bsub
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Getting Started</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Getting Started:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="join_slack.html">1. Join our Slack workspace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_compute1_access.html">2. Get access to Compute1</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. First time setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-lsf-conf-rc">3.1. Create <code class="code docutils literal notranslate"><span class="pre">lsf-conf.rc</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#auto-load-lsf-settings">3.2. Auto-load LSF settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download-starter-job">3.3. Download starter job</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="submitting_a_job.html">4. Submitting a job</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Other resources:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../b_commands.html">Useful b-commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compute1_info.html">Useful information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contacts.html">Contacts</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="get_compute1_access.html" title="previous chapter"><span class="section-number">2. </span>Get access to Compute1</a></li>
+      <li>Next: <a href="submitting_a_job.html" title="next chapter"><span class="section-number">4. </span>Submitting a job</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Liam Bindle.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/getting_started/first_time_setup.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
