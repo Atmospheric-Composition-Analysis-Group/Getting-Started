@@ -7,6 +7,8 @@
 
 .. |glossary-contact| replace:: `Liam Bindle`_
 
+.. |this-site-contact| replace:: `Liam Bindle`_
+
 .. |compute1-getting-started-contact| replace:: `Liam Bindle`_
 
 .. |vpn-contact| replace:: `WashU IT`_

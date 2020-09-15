@@ -1,14 +1,14 @@
 .. include:: /fillers/contacts.rst
 
-First time setup
-================
+Perform first time setup
+========================
 
 .. note::
 
    This section uses terminology that you might not be familiar with. Please refer to the 
    :ref:`glossary <acag-glossary>` for definitions.
 
-This section describes the steps to set up your environment on Compute1, so you can start using Compute1 effectively. 
+This section describes the steps to set up your environment on Compute1, so you can start using it effectively. 
 By the end of this section you will have:
 
 1. created :code:`~/lsf-conf.rc`, which configures some useful :term:`LSF` settings
@@ -17,7 +17,7 @@ By the end of this section you will have:
 
 If you need help any any point in this section, please contact |compute1-getting-started-contact|.
 
-Before proceeding, log on to Compute1 and make sure you are in your :code:`$HOME` directory.
+Before proceeding, log on to Compute1:
 
 .. code-block:: console
 
@@ -29,29 +29,29 @@ Create :code:`lsf-conf.rc`
 Here, you are going to create :code:`lsf-conf.rc`. This file sets :term:`environment variables` that configure some
 useful :term:`LSF` settings. Make sure you are logged on to Compute1 and in your :code:`$HOME` directory. 
 
-Download our :code:`lsf-conf.rc` template
+Download our :code:`lsf-conf.rc` template:
 
 .. code-block:: console
 
    [wustlkey@compute1-client-1 ~]$ wget -q https://raw.githubusercontent.com/Atmospheric-Composition-Analysis-Group/compute1/master/lsf-conf.rc
 
 Next, find your :term:`project directory`. Do this by listing the contents of :code:`/storage1/fs1/rvmartin/Active/`, and noting the directory that looks like
-it is yours (it is most likely your WUSTL key).
+it is yours (it is most likely your WUSTL key):
 
 .. code-block:: console
 
    [wustlkey@compute1-client-1 ~]$ ls /storage1/fs1/rvmartin/Active/
 
-Now, open :code:`lsf-conf.rc`
+Open :code:`lsf-conf.rc`
 
 .. code-block:: console
 
    [wustlkey@compute1-client-1 ~]$ vim lsf-conf.rc
 
 and modify :code:`MY_PROJECTS_DIR` so that it points to your project directory (it needs to be the :term:`absolute path`).
-Save :code:`~/lsf-conf.rc`. 
+Save :code:`lsf-conf.rc`. 
 
-Now, you can load these setting like so
+Now, you can load these setting like so:
 
 .. code-block:: console
 
@@ -66,7 +66,7 @@ Auto-load LSF settings
 ----------------------
 
 You are going to want to :code:`source lsf-conf.rc` everytime you log on to Compute1. Therefore, you can add some lines
-to :code:`~/.bashrc` to do this automatically. Open :code:`~/.bashrc`
+to :code:`~/.bashrc` to do this automatically. Open :code:`~/.bashrc`:
 
 .. code-block:: console
 
@@ -98,6 +98,9 @@ Then check that :code:`MY_PROJECTS_DIR` was automatically set.
 
    [wustlkey.bindle@compute1-client-1 ~]$ echo $MY_PROJECTS_DIR 
    /storage1/fs1/rvmartin/Active/wustlkey
+
+
+.. _download_interactive_bsub:
 
 Download starter job
 --------------------

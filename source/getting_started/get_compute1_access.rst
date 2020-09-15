@@ -28,7 +28,7 @@ Request access
 --------------
 
 To get access to Compute1 you need to submit the following: `Compute1 Access Request`_. To submit
-this form from off-campus, you might have to be on the VPN to submit this form.
+this form from off-campus, you might have to be on the VPN.
 
 You can copy-paste these into the form:
 
@@ -81,7 +81,7 @@ A successful log in will look similar to this
    Last login: Fri Sep 11 16:47:45 2020 from workstation.dhcp.wustl.edu
    [wustlkey@compute1-client-1 ~]$
 
-If you get an error you will have to |ris-open-a-ticket| with RIS. They will be able to fix whatever 
+If you get an error, you will have to |ris-open-a-ticket| with RIS. They will be able to fix whatever 
 problem is preventing you from logging on.
 
 Once you can log on, you are ready to use Compute1!
