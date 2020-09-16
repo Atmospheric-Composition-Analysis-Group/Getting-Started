@@ -134,9 +134,29 @@ When your job start, you might see output like this:
 This is the exec node downloading the container (bundle of software for your job). This may take
 several minutes. When the container finishes loading it will give you a prompt that looks like this:
 
+
 .. code-block:: none
 
-   bash-4.2$
+   [wustlkey@compute1-exec-23]/my-projects
+
+.. note ::
+
+   It's possible your prompt looks something like this:
+
+   .. code-block:: none
+
+      bash-4.2$
+
+   You can always check the :term:`host's <host>` name with the :code:`hostname` command
+
+   .. code-block:: none
+
+      bash-4.2$ hostname
+      compute1-exec-200.ris.wustl.edu
+
+   An exec node will have a name like :literal:`compute1-exec-N.ris.wustl.edu` and
+   a head node will have a name like :literal:`compute1-client-N.ris.wustl.edu` (where N is a number).
+   
 
 Now you are on an exec node! Try navigating around the file system a bit. Try looking in these directories:
 
