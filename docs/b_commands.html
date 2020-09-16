@@ -15,8 +15,8 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Useful information" href="compute1_info.html" />
-    <link rel="prev" title="4. Submitting a job" href="getting_started/submitting_a_job.html" />
+    <link rel="next" title="Useful links &amp; information" href="compute1_info.html" />
+    <link rel="prev" title="4. Learn to use Compute1" href="getting_started/submitting_a_job.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -37,6 +37,124 @@
 <span id="b-commands"></span><h1>Useful b-commands<a class="headerlink" href="#useful-b-commands" title="Permalink to this headline">¶</a></h1>
 <p>The command-line programs that you use to interact with <a class="reference internal" href="glossary.html#term-LSF"><span class="xref std std-term">LSF</span></a> start with the letter “b”: <code class="code docutils literal notranslate"><span class="pre">bsub</span></code>, <code class="code docutils literal notranslate"><span class="pre">bqueues</span></code>, <code class="code docutils literal notranslate"><span class="pre">bkill</span></code>, etc.
 Hence, we refer to this group of commands as b-commands. This page lists some of the most useful b-commands.</p>
+<p>For the complete documentation of all the b-commands, see the <a class="reference external" href="https://hpc.llnl.gov/banks-jobs/running-jobs/lsf-commands">LSF Command Reference</a>.</p>
+<dl>
+<dt><code class="code docutils literal notranslate"><span class="pre">bjobs</span></code></dt><dd><p>Lists your active jobs. For example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[liam.bindle@compute1-client-1 ~]$ bjobs
+JOBID   USER    STAT  QUEUE      FROM_HOST   EXEC_HOST   JOB_NAME   SUBMIT_TIME
+59060   liam.bi RUN   general-in compute1-cl 8*compute1- *#zsh;bash Feb 20 09:56
+</pre></div>
+</div>
+<p>Alternatively, you can use the <code class="code docutils literal notranslate"><span class="pre">-l</span> <span class="pre">&lt;JOB_NUMBER&gt;</span></code> option for more verbose output</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[liam.bindle@compute1-client-1 ~]$ bjobs -l 15691
+Job 15691, User liam.bindle, Project default, Application docker1, Job
+               Group /liam.bindle/default, User Group , Status PEND, Queue rvmartin-interactive, Interactiv
+               e pseudo-terminal shell mode, Command &lt;#!/bin/bash;#BSUB -
+               Is;#BSUB -n 24;#BSUB -R &quot;rusage[mem=200000] span[hosts=1]&quot;
+               ;#BSUB -q rvmartin-interactive;#j#BSUB -a &#39;docker(liambind
+               le/mypyenv)&#39;;##BSUB -a &#39;docker(registry.gsc.wustl.edu/sleo
+               ng/base-engineering)&#39;;#BSUB -a &#39;docker(registry.gsc.wustl.
+               edu/sleong/base-engineering-gcc)&#39;; #source /init.rc;source
+               $HOME/compute1/compute-node.rc;cd /my-projects;zsh;#bash&gt;
+               , Esub registry.gsc.wustl.edu/sleong/base-engineer
+               ing-gcc)&gt;
+Wed Jan 15 08:29:47: Submitted from host compute1-client-1.ris.wustl.edu&gt;, CWD
+               $HOME, 24 Task(s), Requested Resources ;
+PENDING REASONS:
+Not enough job slot(s): 25 hosts;
+
+RUNLIMIT
+1440.0 min
+
+MEMLIMIT
+195.3 G
+
+SCHEDULING PARAMETERS:
+      r15s   r1m  r15m   ut      pg    io   ls    it    tmp    swp    mem
+loadSched   -     -     -     -       -     -    -     -     -      -      -
+loadStop    -     -     -     -       -     -    -     -     -      -      -
+
+RESOURCE REQUIREMENT DETAILS:
+Combined: select[(defined(docker)) &amp;&amp; (type == any)] order[r15s:pg] rusage[mem
+               =200000.00] span[hosts=1]
+Effective: -
+</pre></div>
+</div>
+</dd>
+<dt><code class="code docutils literal notranslate"><span class="pre">bkill</span></code></dt><dd><p>Kill one or more jobs. Pass this command the jobs that you want to kill. For example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[liam.bindle@compute1-client-1 ~]$ bkill 59060
+Job &lt;59060&gt; is being terminated
+</pre></div>
+</div>
+</dd>
+<dt><code class="code docutils literal notranslate"><span class="pre">bqueues</span></code></dt><dd><p>Check how much activity there is on the queues. For example,</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[liam.bindle@compute1-client-1 ~]$ bqueues
+QUEUE_NAME      PRIO STATUS          MAX JL/U JL/P JL/H NJOBS  PEND   RUN  SUSP
+datatransfer     10  Open:Active       -    -    -    -     0     0     0     0
+general          10  Open:Active       -    -    -    -  3984   111  3873     0
+general-interac  10  Open:Active       -    -    -    -     3     0     3     0
+fitzp            10  Open:Active       -    -    -    -     0     0     0     0
+fitzp-interacti  10  Open:Active       -    -    -    -     0     0     0     0
+pathology        10  Open:Active       -    -    -    -     0     0     0     0
+pathology-inter  10  Open:Active       -    -    -    -     0     0     0     0
+rvmartin         10  Open:Active       -    -    -    -     0     0     0     0
+rvmartin-intera  10  Open:Active       -    -    -    -     0     0     0     0
+tychele          10  Open:Active       -    -    -    -     0     0     0     0
+tychele-interac  10  Open:Active       -    -    -    -     0     0     0     0
+irahall          10  Open:Active       -    -    -    -     0     0     0     0
+irahall-interac  10  Open:Active       -    -    -    -    16     0    16     0
+timley           10  Open:Active       -    -    -    -     0     0     0     0
+timley-interact  10  Open:Active       -    -    -    -     0     0     0     0
+</pre></div>
+</div>
+</dd>
+<dt><code class="code docutils literal notranslate"><span class="pre">bhosts</span></code></dt><dd><p>Checks how much activity is on each exec node. Pass this command the queue that you want
+to check.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[liam.bindle@compute1-client-1 ~]$ bhosts rvmartin
+HOST_NAME          STATUS       JL/U    MAX  NJOBS    RUN  SSUSP  USUSP    RSV
+compute1-exec-10.r ok              -     36      0      0      0      0      0
+compute1-exec-11.r ok              -     36      0      0      0      0      0
+compute1-exec-12.r ok              -     36      0      0      0      0      0
+compute1-exec-13.r ok              -     36      0      0      0      0      0
+compute1-exec-14.r ok              -     36      0      0      0      0      0
+compute1-exec-15.r ok              -     36      0      0      0      0      0
+compute1-exec-16.r ok              -     36      0      0      0      0      0
+compute1-exec-17.r ok              -     36      0      0      0      0      0
+compute1-exec-18.r ok              -     36      0      0      0      0      0
+compute1-exec-19.r ok              -     36      0      0      0      0      0
+compute1-exec-20.r ok              -     36      0      0      0      0      0
+compute1-exec-21.r ok              -     36      0      0      0      0      0
+compute1-exec-22.r closed          -     36      0      0      0      0      0
+compute1-exec-23.r ok              -     36      0      0      0      0      0
+compute1-exec-24.r ok              -     36      0      0      0      0      0
+compute1-exec-25.r ok              -     36      0      0      0      0      0
+compute1-exec-26.r ok              -     36      0      0      0      0      0
+compute1-exec-27.r ok              -     36      0      0      0      0      0
+compute1-exec-28.r ok              -     36      0      0      0      0      0
+compute1-exec-29.r ok              -     36      0      0      0      0      0
+compute1-exec-3.ri closed          -      1      0      0      0      0      0
+compute1-exec-30.r ok              -     36      0      0      0      0      0
+compute1-exec-4.ri ok              -     36      0      0      0      0      0
+compute1-exec-5.ri ok              -     36      0      0      0      0      0
+compute1-exec-6.ri ok              -     36      0      0      0      0      0
+compute1-exec-7.ri ok              -     36      0      0      0      0      0
+compute1-exec-8.ri closed          -     36      0      0      0      0      0
+compute1-exec-9.ri ok              -     36      0      0      0      0      0
+</pre></div>
+</div>
+</dd>
+<dt><code class="code docutils literal notranslate"><span class="pre">bgadd</span></code></dt><dd><p>Creates a job group. For example</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[liam.bindle@compute1-client-1 ~]$ bgadd -L 30 /liam.bindle/test_group
+Job group  was added.
+</pre></div>
+</div>
+<p>In your job script, you specify the job’s group with the <code class="code docutils literal notranslate"><span class="pre">-g</span></code> option. For example,
+to include a job in this group you would have the following line in your job script</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#BSUB -g /liam.bindle/test_group</span>
+</pre></div>
+</div>
+</dd>
+</dl>
 </div>
 
 
@@ -60,13 +178,13 @@ Hence, we refer to this group of commands as b-commands. This page lists some of
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_started/join_slack.html">1. Join our Slack workspace</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started/get_compute1_access.html">2. Get access to Compute1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/first_time_setup.html">3. First time setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/submitting_a_job.html">4. Submitting a job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/first_time_setup.html">3. Perform first time setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/submitting_a_job.html">4. Learn to use Compute1</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other resources:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Useful b-commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compute1_info.html">Useful information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compute1_info.html">Useful links &amp; information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Terminology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contacts.html">Contacts</a></li>
 </ul>
@@ -75,8 +193,8 @@ Hence, we refer to this group of commands as b-commands. This page lists some of
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="getting_started/submitting_a_job.html" title="previous chapter"><span class="section-number">4. </span>Submitting a job</a></li>
-      <li>Next: <a href="compute1_info.html" title="next chapter">Useful information</a></li>
+      <li>Previous: <a href="getting_started/submitting_a_job.html" title="previous chapter"><span class="section-number">4. </span>Learn to use Compute1</a></li>
+      <li>Next: <a href="compute1_info.html" title="next chapter">Useful links &amp; information</a></li>
   </ul></li>
 </ul>
 </div>

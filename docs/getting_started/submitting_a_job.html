@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Submitting jobs &#8212; Getting Started  documentation</title>
+    <title>4. Learn to use Compute1 &#8212; Getting Started  documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Useful b-commands" href="../b_commands.html" />
-    <link rel="prev" title="3. First time setup" href="first_time_setup.html" />
+    <link rel="prev" title="3. Perform first time setup" href="first_time_setup.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,24 +33,32 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="submitting-jobs">
-<h1><span class="section-number">4. </span>Submitting jobs<a class="headerlink" href="#submitting-jobs" title="Permalink to this headline">¶</a></h1>
-<p>When you SSH into Compute1, you will land on a <a class="reference internal" href="../glossary.html#term-head-node"><span class="xref std std-term">head node</span></a>. When you are on a head node you use <a class="reference internal" href="../b_commands.html#b-commands"><span class="std std-ref">b-commands</span></a>
-to interact with <a class="reference internal" href="../glossary.html#term-LSF"><span class="xref std std-term">LSF</span></a>. LSF is the <a class="reference internal" href="../glossary.html#term-scheduler"><span class="xref std std-term">scheduling</span></a> software that runs on Compute1. The scheduler is
-a system that manages the computing resources: it receives job submissions from users, it finds <a class="reference internal" href="../glossary.html#term-exec-nodes"><span class="xref std std-term">exec nodes</span></a> with the resources
-to run each job, and then it starts those jobs running in isolated environments on the allocated exec nodes. Note that
-the system will delay starting a job if there currently aren’t enough resources for the job.</p>
-<p>This section describes the procedure for submitting a job on Compute1.</p>
-<div class="section" id="create-a-job-script">
-<h2><span class="section-number">4.1. </span>Create a job script<a class="headerlink" href="#create-a-job-script" title="Permalink to this headline">¶</a></h2>
-<p>In brief, a <a class="reference internal" href="../glossary.html#term-job"><span class="xref std std-term">job script</span></a> specifies three things:</p>
+  <div class="section" id="learn-to-use-compute1">
+<h1><span class="section-number">4. </span>Learn to use Compute1<a class="headerlink" href="#learn-to-use-compute1" title="Permalink to this headline">¶</a></h1>
+<p>Before you start using Compute1, you should understand the general structure. When you SSH into
+Compute1, you will land on a <a class="reference internal" href="../glossary.html#term-head-node"><span class="xref std std-term">head node</span></a>. On a head node you can use <a class="reference internal" href="../b_commands.html#b-commands"><span class="std std-ref">b-commands</span></a> to interact with <a class="reference internal" href="../glossary.html#term-LSF"><span class="xref std std-term">LSF</span></a>. LSF is the <a class="reference internal" href="../glossary.html#term-scheduler"><span class="xref std std-term">scheduling</span></a> software that
+runs on Compute1. It is a system that manages the computing resources: it receives job submissions
+from users, and then it finds available <a class="reference internal" href="../glossary.html#term-exec-nodes"><span class="xref std std-term">exec nodes</span></a> to run those jobs.</p>
+<a class="reference internal image-reference" href="../_images/you-head-exec.svg"><img alt="../_images/you-head-exec.svg" src="../_images/you-head-exec.svg" width="100%" /></a>
+<p>Regardless of whether you want to run a <a class="reference internal" href="../glossary.html#term-batch-job"><span class="xref std std-term">batch job</span></a> or <a class="reference internal" href="../glossary.html#term-interactive-job"><span class="xref std std-term">interactive job</span></a>, the general workflow for
+using Compute1 is</p>
+<ol class="arabic simple">
+<li><p>You write a <a class="reference internal" href="../glossary.html#term-job"><span class="xref std std-term">job script</span></a></p></li>
+<li><p>You submit that job to LSF with the <code class="code docutils literal notranslate"><span class="pre">bsub</span></code> command</p></li>
+<li><p>LSF will start running your job on an exec node</p></li>
+</ol>
+<p>This section describes what you need to know to start writing and running your own jobs on Compute1.</p>
+<div class="section" id="the-anatomy-of-a-job">
+<h2><span class="section-number">4.1. </span>The anatomy of a job<a class="headerlink" href="#the-anatomy-of-a-job" title="Permalink to this headline">¶</a></h2>
+<p>In brief, a job script specifies three things:</p>
 <ol class="arabic simple">
 <li><p>the job’s resource requirements (e.g., number of core, memory requirements, a time limit, etc.)</p></li>
 <li><p>the job’s configuration (e.g., whether or not the job is <a class="reference internal" href="../glossary.html#term-interactive-job"><span class="xref std std-term">interactive</span></a>,
 the output log’s file name, the <a class="reference internal" href="../glossary.html#term-container"><span class="xref std std-term">container</span></a> in which to execute the job).</p></li>
 <li><p>the commands that are  executed when the job lands on the exec node</p></li>
 </ol>
-<p>Lets look at <code class="code docutils literal notranslate"><span class="pre">interactive.bsub</span></code> as an example:</p>
+<p>Lets look at an example. Previously you should have <a class="reference internal" href="first_time_setup.html#download-interactive-bsub"><span class="std std-ref">downloaded interactive.bsub</span></a>.
+It is a basic interactive job. Here is its contents:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#BSUB -Is</span>
 <span class="c1">#BSUB -n 8</span>
@@ -64,26 +72,138 @@ bash
 </div>
 <p>The lines at the top, starting with <code class="code docutils literal notranslate"><span class="pre">#BSUB</span></code>, are specifying LSF options:</p>
 <ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">-Is</span></code> tells LSF it is an interactive job</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">-n</span> <span class="pre">8</span></code> tells LSF the job needs 8 cores</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">-R</span> <span class="pre">&quot;rusage[mem=40000]</span> <span class="pre">span[hosts=1]&quot;</span></code> tells LSF the job needs 40 GB of memory, and that all 8 cores should land on the same <a class="reference internal" href="../glossary.html#term-host"><span class="xref std std-term">host</span></a> (exec node)</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">-q</span> <span class="pre">rvmartin-interactive</span></code> tells LSF to add the job to the <code class="code docutils literal notranslate"><span class="pre">rvmartin-interactive</span></code> <a class="reference internal" href="../glossary.html#term-queue"><span class="xref std std-term">job queue</span></a></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">-a</span> <span class="pre">'docker(registry.gsc.wustl.edu/sleong/base-engineering)'</span></code> tells LSF to launch the job in the <code class="code docutils literal notranslate"><span class="pre">registry.gsc.wustl.edu/sleong/base-engineering</span></code> <a class="reference internal" href="../glossary.html#term-container"><span class="xref std std-term">container</span></a></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-Is</span></code> tells LSF this is an interactive job</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-n</span> <span class="pre">8</span></code> tells LSF this job needs 8 cores</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-R</span> <span class="pre">&quot;rusage[mem=40000]</span> <span class="pre">span[hosts=1]&quot;</span></code> tells LSF this job needs 40 GB of memory and that all 8 cores should land on the same <a class="reference internal" href="../glossary.html#term-host"><span class="xref std std-term">host</span></a> (exec node)</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-q</span> <span class="pre">rvmartin-interactive</span></code> tells LSF which <a class="reference internal" href="../glossary.html#term-queue"><span class="xref std std-term">queue</span></a> this job should be put in</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-a</span> <span class="pre">'docker(registry.gsc.wustl.edu/sleong/base-engineering)'</span></code> tells LSF which <a class="reference internal" href="../glossary.html#term-container"><span class="xref std std-term">container</span></a> this job should be ran inside</p></li>
 </ul>
-<p>The other lines are the commands that are executed when the job lands on the exec node:</p>
+<p>The other lines are the commands that are executed when the job lands on the exec node. This job
+navigates to your <a class="reference internal" href="../glossary.html#term-project-directory"><span class="xref std std-term">project directory</span></a> and starts a bash terminal (hence it being an interactive job):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /my-projects
 bash
 </pre></div>
 </div>
-<p>This job changes to your <code class="code docutils literal notranslate"><span class="pre">project</span> <span class="pre">directory</span></code> and starts a bash terminal.</p>
+<p>Next, lets consider a batch job. A batch job does not have an interactive terminal. Here is an example of a
+batch job to run a GEOS-Chem simulation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#BSUB -q rvmartin</span>
+<span class="c1">#BSUB -n 16</span>
+<span class="c1">#BSUB -W 168:00</span>
+<span class="c1">#BSUB -R &quot;rusage[mem=40000] span[hosts=1]&quot;</span>
+<span class="c1">#BSUB -a &#39;docker(registry.gsc.wustl.edu/sleong/base-engineering)&#39;</span>
+<span class="c1">#BSUB -J &quot;Example 1-year 2x2.5 GEOS-Chem simulation&quot;</span>
+<span class="c1">#BSUB -N</span>
+<span class="c1">#BSUB -u wustlkey@wustl.edu</span>
+<span class="c1">#BSUB -o job-%J-output.txt</span>
+
+<span class="c1"># Set up runtime environment</span>
+. /etc/bashrc                               <span class="c1"># Source global bashrc file</span>
+<span class="nb">set</span> -x                                      <span class="c1"># Print executed commands</span>
+<span class="nb">set</span> -e                                      <span class="c1"># Exit immediately if a command fails</span>
+<span class="nb">ulimit</span> -s unlimited                         <span class="c1"># Make max stack size large</span>
+<span class="nb">export</span> <span class="nv">OMP_STACKSIZE</span><span class="o">=</span>500m                   <span class="c1"># Make max stack size of threads large</span>
+<span class="nb">export</span> <span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="nv">$LSB_DJOB_NUMPROC</span>    <span class="c1"># Set num threads based on bsub&#39;s -n argument</span>
+
+<span class="c1"># Execute simulation</span>
+<span class="nb">cd</span> /my-projects/geos-chem-example/geosfp_2x25_standard   <span class="c1"># cd into run directory</span>
+./geos
+</pre></div>
 </div>
-<div class="section" id="submit-with-bsub">
-<h2><span class="section-number">4.2. </span>Submit with bsub<a class="headerlink" href="#submit-with-bsub" title="Permalink to this headline">¶</a></h2>
-<p>You submit a job to the scheduler with the <code class="code docutils literal notranslate"><span class="pre">bsub</span></code> command. This is done as follows</p>
+<p>Documentation of all the <code class="code docutils literal notranslate"><span class="pre">#BSUB</span></code> options can be found in the <a class="reference external" href="https://www.ibm.com/support/knowledgecenter/en/SSWRJV_10.1.0/lsf_command_ref/bsub.heading_options.1.html">bsub command reference</a>. The important
+new ones here are:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">-W</span> <span class="pre">168:00</span></code> tells LSF the time limit for this job is 168 hours</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">-N</span></code>, <code class="code docutils literal notranslate"><span class="pre">-u</span></code>, <code class="code docutils literal notranslate"><span class="pre">-o</span></code> options tell LSF to send an email to <a class="reference external" href="mailto:wustlkey&#37;&#52;&#48;wustl&#46;edu">wustlkey<span>&#64;</span>wustl<span>&#46;</span>edu</a> when the job finishes
+and to write the output to a file named <code class="docutils literal notranslate"><span class="pre">job-&lt;JOB_NUMER&gt;-output.txt</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="submitting-jobs">
+<span id="submitting-a-job"></span><h2><span class="section-number">4.2. </span>Submitting jobs<a class="headerlink" href="#submitting-jobs" title="Permalink to this headline">¶</a></h2>
+<p>To submit jobs, you use the <code class="code docutils literal notranslate"><span class="pre">bsub</span></code> command. This is done like so:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey@compute1-client-1 ~]$</span> bsub &lt; interactive.bsub
 </pre></div>
 </div>
-<p>This submits the <code class="code docutils literal notranslate"><span class="pre">interactive.bsub</span></code> job to <code class="code docutils literal notranslate"><span class="pre">rvmartin-interactive</span></code> queue.</p>
+<p>This submits the <code class="code docutils literal notranslate"><span class="pre">interactive.bsub</span></code> job to <code class="code docutils literal notranslate"><span class="pre">rvmartin-interactive</span></code> queue (recall the <code class="code docutils literal notranslate"><span class="pre">-q</span></code> option). Go ahead and try this.</p>
+<p>When your job start, you might see output like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Defaulting to LSF user group &#39;compute-rvmartin&#39;
+Job &lt;820428&gt; is submitted to queue &lt;rvmartin-interactive&gt;.
+&lt;&lt;Waiting for dispatch ...&gt;&gt;
+&lt;&lt;Starting on compute1-exec-18.ris.wustl.edu&gt;&gt;
+Using default tag: latest
+latest: Pulling from sleong/base-engineering
+f34b00c7da20: Pull complete
+b8eeb48b5be7: Extracting [================&gt;                                  ]  231.2MB/694MB
+7f625b94b369: Download complete
+69af3c0995d8: Download complete
+d7c5a68baa50: Download complete
+b6940320f480: Download complete
+0add7da1fe1f: Download complete
+020864d5fd76: Download complete
+f27470de26bb: Download complete
+9f1216441364: Download complete
+</pre></div>
+</div>
+<p>This is the exec node downloading the container (bundle of software for your job). This may take
+several minutes. When the container finishes loading it will give you a prompt that looks like this:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash-4.2$
+</pre></div>
+</div>
+<p>Now you are on an exec node! Try navigating around the file system a bit. Try looking in these directories:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/my-projects</span></code>: this is your project directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/Shared</span></code>: this is the our group’s <a class="reference internal" href="../glossary.html#term-shared-directory"><span class="xref std std-term">shared directory</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/ExtData</span></code>: this is <a class="reference internal" href="../glossary.html#term-ExtData"><span class="xref std std-term">ExtData</span></a> for your GEOS-Chem simulations</p></li>
+</ul>
+<p>You can terminate the interactive job by entering <code class="code docutils literal notranslate"><span class="pre">exit</span></code>.</p>
+</div>
+<div class="section" id="what-is-a-container">
+<h2><span class="section-number">4.3. </span>What is a container?<a class="headerlink" href="#what-is-a-container" title="Permalink to this headline">¶</a></h2>
+<p>A container is the bundle of software (programs and libraries) available to your job.  If you want
+to run Matlab, you need a container that has the Matlab program. Similarly, if you want to build
+GEOS-Chem, you need a container that has GEOS-Chem’s dependencies like NetCDF, and NetCDF-Fortran.</p>
+<p>You can build your own container with <a class="reference external" href="https://docs.docker.com/get-started/">Docker</a>, which is nice because it means you can run whatever software you
+want on Compute1, but this is also quite a bit of work. Therefore, the following containers
+are available to you</p>
+<dl class="simple">
+<dt><code class="code docutils literal notranslate"><span class="pre">registry.gsc.wustl.edu/sleong/base-engineering</span></code></dt><dd><p>A general environment for ACAG based on Intel compilers. It contains GEOS-Chem/GCHP dependencies, NetCDF operators, etc.</p>
+</dd>
+<dt><code class="code docutils literal notranslate"><span class="pre">registry.gsc.wustl.edu/sleong/base-engineering-gcc</span></code></dt><dd><p>A general environment for ACAG based on GNU compilers. It contains GEOS-Chem/GCHP dependencies, NetCDF operators, etc.</p>
+</dd>
+</dl>
+<p>You select the container for your job with the <code class="code docutils literal notranslate"><span class="pre">-a</span> <span class="pre">'docker(name-of-the-container)'</span></code> option in your job script.</p>
+</div>
+<div class="section" id="learn-the-file-structure">
+<h2><span class="section-number">4.4. </span>Learn the file structure<a class="headerlink" href="#learn-the-file-structure" title="Permalink to this headline">¶</a></h2>
+<p>Files are stored on <a class="reference internal" href="../glossary.html#term-Storage1"><span class="xref std std-term">Storage1</span></a>. Storage1 is a sophisticated data storage platform, which is connected
+to Compute1, but Storage1 and Compute1 are in fact separate systems. The important thing to understand here is
+that storage on Compute1 are not just a bunch of hard-drives connected to the cluster—for better of for worse, it is a more
+complicated system.</p>
+<p>Before proceeding, you should start an interactive job. If you aren’t in an interactive job right now,
+go ahead and do so now (see <a class="reference internal" href="#submitting-a-job">submitting a job</a> if you forgot).</p>
+<p>Currently, you are in an interactive job. Jobs are always run on exec nodes, so this means you are on an exec node.
+On the exec node you inside a container. In the container (or equivalently, in your job) there are three
+directory you should know about:</p>
+<ul class="simple">
+<li><p>Your <a class="reference internal" href="../glossary.html#term-project-directory"><span class="xref std std-term">project directory</span></a> is <code class="docutils literal notranslate"><span class="pre">/my-projects</span></code></p></li>
+<li><p>The group’s <a class="reference internal" href="../glossary.html#term-shared-directory"><span class="xref std std-term">shared directory</span></a> is <code class="docutils literal notranslate"><span class="pre">/Shared</span></code></p></li>
+<li><p>The <a class="reference internal" href="../glossary.html#term-ExtData"><span class="xref std std-term">ExtData</span></a> directory for GEOS-Chem is <code class="docutils literal notranslate"><span class="pre">/ExtData</span></code></p></li>
+</ul>
+<p>But, these directories were not mounted in your container magically. These <a class="reference internal" href="../glossary.html#term-mount"><span class="xref std std-term">mounts</span></a> were specified by the value of
+the <code class="code docutils literal notranslate"><span class="pre">LSF_DOCKER_VOLUMES</span></code> environment variable when you submitted your job, and <code class="code docutils literal notranslate"><span class="pre">LSF_DOCKER_VOLUMES</span></code>
+was set when you logged on to Compute1 by <code class="docutils literal notranslate"><span class="pre">lsf-conf.rc</span></code>.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">LSF_DOCKER_VOLUMES</span></code> is a space-separated list of connections between Storage1 and your
+container. For example, the entry for <code class="docutils literal notranslate"><span class="pre">/Shared</span></code> is
+<code class="code docutils literal notranslate"><span class="pre">/storage1/fs1/rvmartin/Active/Shared:/Shared</span></code>. This tells LSF to mount the shared directory
+to <code class="docutils literal notranslate"><span class="pre">/Shared</span></code> in your container. Directories that you want to access during your job
+<strong>must</strong> be specified in this way. To add or remove mounts, you can modify <code class="docutils literal notranslate"><span class="pre">lsf-conf.rc</span></code>.</p>
+<p>Now exit the interactive job. Once your interactive job has exited, you will be on a head node (the same
+place you land when you SSH into Compute1). When you are on a head node, our groups files are
+located in <code class="docutils literal notranslate"><span class="pre">/storage1/fs1/rvmartin/Active/</span></code>. Inside this directory, you will find your project
+directory, the group’s shared directory, and a directory named <code class="docutils literal notranslate"><span class="pre">GEOS-Chem-Shared</span></code> which
+includes the ExtData directory.</p>
+<p>The important take away here, is that files look like they are in a different place, depending on whether your are in a
+job or on a head node.</p>
 </div>
 </div>
 
@@ -108,17 +228,19 @@ bash
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="join_slack.html">1. Join our Slack workspace</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get_compute1_access.html">2. Get access to Compute1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="first_time_setup.html">3. First time setup</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Submitting jobs</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#create-a-job-script">4.1. Create a job script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#submit-with-bsub">4.2. Submit with bsub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first_time_setup.html">3. Perform first time setup</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Learn to use Compute1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-anatomy-of-a-job">4.1. The anatomy of a job</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-jobs">4.2. Submitting jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-a-container">4.3. What is a container?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#learn-the-file-structure">4.4. Learn the file structure</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Other resources:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../b_commands.html">Useful b-commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../compute1_info.html">Useful information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compute1_info.html">Useful links &amp; information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Terminology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contacts.html">Contacts</a></li>
 </ul>
@@ -127,7 +249,7 @@ bash
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="first_time_setup.html" title="previous chapter"><span class="section-number">3. </span>First time setup</a></li>
+      <li>Previous: <a href="first_time_setup.html" title="previous chapter"><span class="section-number">3. </span>Perform first time setup</a></li>
       <li>Next: <a href="../b_commands.html" title="next chapter">Useful b-commands</a></li>
   </ul></li>
 </ul>

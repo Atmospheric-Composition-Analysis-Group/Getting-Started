@@ -10,6 +10,7 @@ Welcome to the group!
    getting_started/get_compute1_access
    getting_started/first_time_setup
    getting_started/submitting_a_job
+   getting_started/next_steps
 
 
 .. toctree::

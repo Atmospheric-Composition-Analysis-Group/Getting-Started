@@ -94,3 +94,13 @@ Terminology
       :code:`rvmartin-interactive`, :code:`general`, and :code:`general-interactive` queues. The number of available
       :term:`slots <slot>` in a queue can been seen with the :code:`bqueues` command. Interactive jobs must be 
       submitted to the interactive queues.
+
+   ExtData
+      This is the data repository for all GEOS-Chem data (e.g., metfields, HEMCO, etc.). In your
+      job, this directory is mounted to :literal:`/ExtData`. On Storage1 this directory is located
+      at :literal:`/storage1/fs1/rvmartin/Active/GEOS-Chem-shared/ExtData`. Note ExtData is an offical data repository for
+      GEOS-Chem, so it is read-only. For custom emissions, you will have to put them elsewhere (the :term:`shared directory`
+      would be a good place)
+
+   mount
+      To connect the directories between filesystems

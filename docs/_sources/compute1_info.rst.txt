@@ -1,16 +1,18 @@
 .. include:: /fillers/links.rst
 
-Useful information
-==================
+
+.. _useful links:
+
+Useful links & information
+==========================
 
 Links
 -----
 
-Quality tutorials for getting started with Linux:
+Good tutorials for getting started with Linux:
 
 * `University of Surry's Unix Tutorial <http://www.ee.surrey.ac.uk/Teaching/Unix/index.html>`_ (tutorial 1-5 are good for our work)
-* vim
-* ssh
+* `vim tutorial in 8 minutes <https://www.youtube.com/watch?v=ggSyF1SVFr4>`_
 
 Resources for learning about Compute1:
 
@@ -21,23 +23,20 @@ Report a problem to RIS: |ris-open-a-ticket|
 
 LSF documentation:
 
-* `LSF Command Reference <https://www.ibm.com/support/knowledgecenter/SSETD4_9.1.2/lsf_kc_cmd_ref.html>`_
-* `bsub command options <https://www.ibm.com/support/knowledgecenter/SSWRJV_10.1.0/lsf_command_ref/bsub.heading_options.1.html>`_
+* |lsf-command-reference|
+* |bsub-docs|
 
-Available containers
---------------------
+See the :ref:`b-commands page <b-commands>` for a quick overview of commands for interacting with LSF.
+
+Available containers (current)
+------------------------------
 
 Official containers, supported by RIS:
 
-:code:`registry.gsc.wustl.edu/sleong/base-engineering`
-   A general environment for ACAG based on Intel compilers. It contains GEOS-Chem/GCHP dependencies, NetCDF operators, etc.
+.. include:: /fillers/containers.rst
 
-:code:`registry.gsc.wustl.edu/sleong/base-engineering-gcc`
-   A general environment for ACAG based on GNU compilers. It contains GEOS-Chem/GCHP dependencies, NetCDF operators, etc.
-
-
-Compute1-accessible networks
-----------------------------
+Compute1-accessible networks (current)
+--------------------------------------
 
 VPN's that you can access compute1 from:
 

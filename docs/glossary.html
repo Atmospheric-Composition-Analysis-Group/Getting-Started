@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Contacts" href="contacts.html" />
-    <link rel="prev" title="Useful information" href="compute1_info.html" />
+    <link rel="prev" title="Useful links &amp; information" href="compute1_info.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -62,6 +62,12 @@ Compute1 is based on Docker containers. You can build these yourself and there i
 </dd>
 <dt id="term-exec-nodes">exec nodes</dt><dd><p>Your <a class="reference internal" href="#term-job"><span class="xref std std-term">jobs</span></a> run on exec nodes. Both <a class="reference internal" href="#term-interactive-job"><span class="xref std std-term">interactive jobs</span></a>, and <a class="reference internal" href="#term-batch-job"><span class="xref std std-term">batch jobs</span></a> are run on <a class="reference internal" href="#term-exec-nodes"><span class="xref std std-term">exec nodes</span></a>.</p>
 </dd>
+<dt id="term-ExtData">ExtData</dt><dd><p>This is the data repository for all GEOS-Chem data (e.g., metfields, HEMCO, etc.). In your
+job, this directory is mounted to <code class="docutils literal notranslate"><span class="pre">/ExtData</span></code>. On Storage1 this directory is located
+at <code class="docutils literal notranslate"><span class="pre">/storage1/fs1/rvmartin/Active/GEOS-Chem-shared/ExtData</span></code>. Note ExtData is an offical data repository for
+GEOS-Chem, so it is read-only. For custom emissions, you will have to put them elsewhere (the <a class="reference internal" href="#term-shared-directory"><span class="xref std std-term">shared directory</span></a>
+would be a good place)</p>
+</dd>
 <dt id="term-head-node">head node</dt><dd><p>When you SSH into Compute1 you will land on one of the head nodes. Head nodes are essentially the login servers for Compute1. These
 head nodes have names like <code class="code docutils literal notranslate"><span class="pre">compute1-client-3</span></code>.
 When you’re on a head node you can interact with <a class="reference internal" href="#term-LSF"><span class="xref std std-term">LSF</span></a> to submit jobs, kills <a class="reference internal" href="#term-job"><span class="xref std std-term">jobs</span></a>, see how much acticity is in each queue, etc.,
@@ -77,6 +83,8 @@ In most cases, the job will terminate when you close the terminal.</p>
 your job (e.g., how many cores, how much memory, a time-limit for the job, etc.) There are two types of jobs: <a class="reference internal" href="#term-interactive-job"><span class="xref std std-term">interactive jobs</span></a>, and <a class="reference internal" href="#term-batch-job"><span class="xref std std-term">batch jobs</span></a></p>
 </dd>
 <dt id="term-LSF">LSF</dt><dd><p>LSF is the <a class="reference internal" href="#term-scheduler"><span class="xref std std-term">scheduler</span></a> that runs on Compute1. It is produced by IBM.</p>
+</dd>
+<dt id="term-mount">mount</dt><dd><p>To connect the directories between filesystems</p>
 </dd>
 <dt id="term-node">node</dt><dd><p>Each physical machine (server) in the cluster is node. There are many nodes in the Compute1 cluster. There are two
 types of nodes on Compute1: <a class="reference internal" href="#term-head-node"><span class="xref std std-term">head nodes</span></a>, and <a class="reference internal" href="#term-exec-nodes"><span class="xref std std-term">exec nodes</span></a>.</p>
@@ -129,13 +137,14 @@ can restrict them with <code class="code docutils literal notranslate"><span cla
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="getting_started/join_slack.html">1. Join our Slack workspace</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started/get_compute1_access.html">2. Get access to Compute1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/first_time_setup.html">3. First time setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started/submitting_a_job.html">4. Submitting jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/first_time_setup.html">3. Perform first time setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/submitting_a_job.html">4. Learn to use Compute1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/next_steps.html">5. What next?</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Other resources:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="b_commands.html">Useful b-commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compute1_info.html">Useful information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compute1_info.html">Useful links &amp; information</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Terminology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contacts.html">Contacts</a></li>
 </ul>
@@ -144,7 +153,7 @@ can restrict them with <code class="code docutils literal notranslate"><span cla
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="compute1_info.html" title="previous chapter">Useful information</a></li>
+      <li>Previous: <a href="compute1_info.html" title="previous chapter">Useful links &amp; information</a></li>
       <li>Next: <a href="contacts.html" title="next chapter">Contacts</a></li>
   </ul></li>
 </ul>
