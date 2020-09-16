@@ -137,7 +137,7 @@ several minutes. When the container finishes loading it will give you a prompt t
 
 .. code-block:: none
 
-   [wustlkey@compute1-exec-23]/my-projects
+   [wustlkey@compute1-exec-23]/my-projects%
 
 .. note ::
 
