@@ -28,6 +28,8 @@ LSF documentation:
 
 See the :ref:`b-commands page <b-commands>` for a quick overview of commands for interacting with LSF.
 
+The `Globus <https://app.globus.org/>`_ endpoint for Storage1 is named :literal:`Wash U RIS storage1 dtn1`.
+
 Available containers (current)
 ------------------------------
 
