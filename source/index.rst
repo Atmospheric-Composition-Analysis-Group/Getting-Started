@@ -15,7 +15,14 @@ Welcome to the group!
 
 .. toctree::
    :maxdepth: 1
-   :caption: Other resources:
+   :caption: Instructions:
+
+   using_matlab
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Resources/information:
 
    b_commands
    compute1_info
