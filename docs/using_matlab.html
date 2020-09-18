@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Using MATLAB &#8212; Getting Started  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Useful b-commands" href="b_commands.html" />
+    <link rel="prev" title="5. What next?" href="getting_started/next_steps.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="using-matlab">
+<h1>Using MATLAB<a class="headerlink" href="#using-matlab" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="set-up-the-matlab-license">
+<h2>Set up the MATLAB license<a class="headerlink" href="#set-up-the-matlab-license" title="Permalink to this headline">¶</a></h2>
+<p>Prerequisite for using MATLAB is to setup the MATLAB license. Shown below is the step that must be
+taken to setup the license for MATLAB. You only need to set it up one time.</p>
+<p>SSH in to Compute1:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh wustlkey@compute1-client-1.ris.wustl.edu
+</pre></div>
+</div>
+<p>Modify <code class="code docutils literal notranslate"><span class="pre">LSF_DOCKER_VOLUMES</span></code> in <code class="docutils literal notranslate"><span class="pre">~/lsf-conf.rc</span></code>. Recall <code class="code docutils literal notranslate"><span class="pre">LSF_DOCKER_VOLUMES</span></code> is
+a space-separated list of <code class="docutils literal notranslate"><span class="pre">path1:path2</span></code> pairs, specifying directories on Storage1 that are
+<a class="reference internal" href="glossary.html#term-mount"><span class="xref std std-term">mounted</span></a> in your container: <code class="docutils literal notranslate"><span class="pre">path1</span></code> the directory on Storage1 and
+<code class="docutils literal notranslate"><span class="pre">path2</span></code> is where it is mounted in your container. You need to add the following
+<code class="docutils literal notranslate"><span class="pre">path1:path2</span></code> pair to <code class="code docutils literal notranslate"><span class="pre">LSF_DOCKER_VOLUMES</span></code> in
+<code class="docutils literal notranslate"><span class="pre">~/lsf-conf.rc</span></code>:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">/storage1/fs1/rvmartin/Active/tools/matlab-2019a/licenses:$HOME/.matlab/R2019b_licenses</span></code></p>
+</div></blockquote>
+<p>Add the following line to the end of your <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code> file to make sure you have
+<code class="docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> in your <code class="code docutils literal notranslate"><span class="pre">PATH</span></code>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export PATH=$PATH:/usr/local/bin
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-matlab-interactively-in-terminal">
+<h2>Running MATLAB interactively in terminal<a class="headerlink" href="#running-matlab-interactively-in-terminal" title="Permalink to this headline">¶</a></h2>
+<p>Shown below is the quick-start guide to start MATLAB in a terminal.</p>
+<p>SSH in to Compute1:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh wustlkey@compute1-client-1.ris.wustl.edu
+</pre></div>
+</div>
+<p>Get a compute exec node terminal:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">[wustlkey@compute1-client-1 ~]$</span> compute1-terminal /bin/bash
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might need to specify <code class="docutils literal notranslate"><span class="pre">-G</span></code> option if you are belonging to multiple compute groups.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can specify <code class="docutils literal notranslate"><span class="pre">-M</span></code> and <code class="docutils literal notranslate"><span class="pre">-R</span></code> option to request x GB of memory. For example, to
+request for 64GB, <code class="code docutils literal notranslate"><span class="pre">compute1-terminal</span> <span class="pre">-M</span> <span class="pre">64GB</span> <span class="pre">-R</span> <span class="pre">'rusage[mem=64GB]'</span> <span class="pre">/bin/bash</span></code></p>
+</div>
+<p>Use software modules to load the environment for running MATLAB</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[wustlkey@compute1-exec-123 ~]$ module avail matlab
+--------------   /act/modulefiles -------------------------------
+matlab matlab_R2019b
+</pre></div>
+</div>
+<p>The matlab module is a short-cut to the latest version. If you wanted to use a specific
+version, you’ll do:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[wustlkey@compute1-exec-123 ~]$ module load matlab_R2019b
+</pre></div>
+</div>
+<p>You can then run the matlab command directly:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[wustlkey@compute1-exec-123 ~]$ matlab
+MATLAB is selecting SOFTWARE OPENGL rendering.
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-matlab-interactively-in-novnc-session">
+<h2>Running MATLAB interactively in noVNC session<a class="headerlink" href="#running-matlab-interactively-in-novnc-session" title="Permalink to this headline">¶</a></h2>
+<p>Shown below is the quick-start guide to start MATLAB in a noVNC session.</p>
+<p>SSH in to Compute1:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ssh wustlkey@compute1-client-1.ris.wustl.edu
+</pre></div>
+</div>
+<p>Get a noVNC session. You will get the output similar to the following if this is your firsttime
+using noVNC. It will generate a random password for you indicated by line with “Your password for
+noVNC is:”.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[wustlkey@compute1-client-1 ~]$ compute1-gui-desktop
+Created password for your noVNC web login.
+Your password for noVNC is: PRhtO6O2PwM=
+
+Please use the password below to login to the noVNC session.
+If you want to pick your own password, you can simply set the
+environment variable VNC_PW with you own password.
+
+Job &lt;627984&gt; is submitted to queue &lt;general-interactive&gt;.
+You can access your compute1 desktop with the URL https://compute1-exec-86.compute.ris.wustl.edu:8901/vnc.html?resize=remote
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You might need to specify <code class="docutils literal notranslate"><span class="pre">-G</span></code> option if you are belonging to multiple compute groups.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can specify <code class="docutils literal notranslate"><span class="pre">-n</span></code> option to request x number of processes. For example, to request for 16 CPU, <code class="docutils literal notranslate"><span class="pre">compute1-gui-desktop</span> <span class="pre">-n</span> <span class="pre">16</span> <span class="pre">/bin/bash</span></code></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can specify <code class="docutils literal notranslate"><span class="pre">-M</span></code> and <code class="docutils literal notranslate"><span class="pre">-R</span></code> option to request x GB of memory. For example, to
+request for 64GB, <code class="code docutils literal notranslate"><span class="pre">compute1-terminal</span> <span class="pre">-M</span> <span class="pre">64GB</span> <span class="pre">-R</span> <span class="pre">'rusage[mem=64GB]'</span> <span class="pre">/bin/bash</span></code></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The password and URL above are only for illustration only. You might get different password and URL.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can prepend to the command “compute-gui-desktop” with VNC_PW=&lt;put your password here&gt; to set
+your own password for noVNC. Please replace “&lt;put your password here&gt;” with your custom password.</p>
+</div>
+<p>Open a browser and copy-and-paste the URL from the step #2 above. The URL is at the line with the wording “You can access your compute1 desktop with the URL”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It might have some delay to setup the noVNC session at the compute execution node. Normally, it
+will take less than 30 seconds. If it is not presenting the noVNC session page after a minute,
+please put in a ticket to RIS service desk: <a class="reference external" href="https://jira.ris.wustl.edu/servicedesk/customer/portal/1/create/101">Open a Ticket</a>.</p>
+</div>
+<p>Login to the noVNC session from the noVNC session page. Please click on the “Connect” button indicated by the red arrow. Then, please put in the password from step#2</p>
+<a class="reference internal image-reference" href="_images/matlab1.png"><img alt="Image of noVNC login" src="_images/matlab1.png" style="width: 100%;" /></a>
+<p>Get a noVNC session terminal by clicking on the terminal icon as indicated by the red arrow as shown below</p>
+<a class="reference internal image-reference" href="_images/matlab1.png"><img alt="Image 2 of matlab instructions" src="_images/matlab1.png" style="width: 100%;" /></a>
+<p>Use software modules to load the environment for running MATLAB.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[wustlkey@compute1-exec-123 ~]$ module avail matlab
+
+--------------   /act/modulefiles -------------------------------
+matlab matlab_R2019b
+</pre></div>
+</div>
+<p>The matlab module is a short-cut to the latest version. If you wanted to use a specific version, you’ll do:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[wustlkey@compute1-exec-123 ~]$ module load matlab_R2019b
+</pre></div>
+</div>
+<p>You can then run the matlab command directly:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[wustlkey@compute1-exec-123 ~]$ matlab
+MATLAB is selecting SOFTWARE OPENGL rendering.
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Getting Started</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/join_slack.html">1. Join our Slack workspace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/get_compute1_access.html">2. Get access to Compute1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/first_time_setup.html">3. Perform first time setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/submitting_a_job.html">4. Learn to use Compute1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/next_steps.html">5. What next?</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Instructions:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using MATLAB</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Resources/information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="b_commands.html">Useful b-commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compute1_info.html">Useful links &amp; information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contacts.html">Contacts</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="getting_started/next_steps.html" title="previous chapter"><span class="section-number">5. </span>What next?</a></li>
+      <li>Next: <a href="b_commands.html" title="next chapter">Useful b-commands</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Liam Bindle.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/using_matlab.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

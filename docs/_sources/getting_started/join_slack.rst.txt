@@ -10,7 +10,7 @@ Our workspace is private (group members only), so you will need an invite to joi
 already received an invite, you should contact |slack-contact|.
 
 .. image:: /images/slack_small.jpg
-  :width: 660
+  :width: 100%
   :alt: Image of Slack client
 
 You can use Slack in your web-browser or download the client (MacOS, Windows, Linux,
