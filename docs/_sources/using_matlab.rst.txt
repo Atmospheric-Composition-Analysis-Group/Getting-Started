@@ -153,7 +153,7 @@ Login to the noVNC session from the noVNC session page. Please click on the “C
 
 Get a noVNC session terminal by clicking on the terminal icon as indicated by the red arrow as shown below
 
-.. image:: /images/matlab1.png
+.. image:: /images/matlab2.png
   :width: 100%
   :alt: Image 2 of matlab instructions
 
