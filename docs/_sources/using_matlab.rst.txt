@@ -1,7 +1,11 @@
 .. include:: /fillers/links.rst
 
+.. include:: /fillers/contacts.rst
+
 Using MATLAB
 ============
+
+For help with running MATLAB on Compute1, you can contact |matlab-contact|.
 
 
 Set up the MATLAB license
