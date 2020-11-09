@@ -25,6 +25,7 @@ Welcome to the group!
    :caption: Resources/information:
 
    b_commands
+   storage_policy
    compute1_info
    glossary
    contacts
