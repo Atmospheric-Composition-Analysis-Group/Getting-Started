@@ -30,6 +30,13 @@ See the :ref:`b-commands page <b-commands>` for a quick overview of commands for
 
 The `Globus <https://app.globus.org/>`_ endpoint for Storage1 is named :literal:`Wash U RIS storage1 dtn1`.
 
+Mounting Storage1 on your local machine
+---------------------------------------
+
+* `MacOS instructions <https://confluence.ris.wustl.edu/display/ITKB/How+Do+I+Mount+My+Research+Storage+Drive+on+macOS>`_
+* `Windows instructions <https://confluence.ris.wustl.edu/display/ITKB/How+Do+I+Mount+My+Research+Storage+Drive+on+Windows>`_
+* Linux instructions: Liam can provide you instructions
+
 Available containers (current)
 ------------------------------
 
