@@ -2,7 +2,7 @@
 
 .. _RIS User Manual: https://confluence.ris.wustl.edu/display/RSUM/User+Manual
 
-.. _Open a Ticket: https://jira.ris.wustl.edu/servicedesk/customer/portal/1/create/101
+.. _Open a Ticket: https://jira.wustl.edu/servicedesk/customer/portal/2/create/27
 
 .. _RIS Knowledge Base: https://confluence.ris.wustl.edu/display/ITKB/Scientific+Compute+Platform
 
