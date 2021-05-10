@@ -54,3 +54,8 @@ VPN's that you can access compute1 from:
 Wifi networks that you can access compute1 from:
 
 .. include:: /fillers/compute1_wifis.rst
+
+Seeing storage1 usage
+---------------------
+
+We can see our daily storage usage here: `https://itsm.ris.wustl.edu/service-overview`_. This service requires special permissions. If you would like access you can submit a ticket.
