@@ -1,0 +1,48 @@
+Data Storage
+============
+
+This is a rolling copy of the group's storage policy. Our group's allocation is 1 PB of Active
+plus 500 TB of Archive. Our Active allocation is at `/storage1/fs1/rvmartin/Active` and our Achive
+allocation is at `/storage1/fs1/rvmartin/Archive`. The Active allocation is where you should put 
+data that you are currently working with. Once a project finishes you should move its data to 
+Archive. 
+
+To transfer data between Active and Archive, you should use Globus or the `safe-transfer` script
+in the `Shared/` directory.
+
+Checking usage
+--------------
+
+Monthly usage reports are generated in `/storage1/fs1/rvmartin/Active/Shared/StorageReports`. Run the
+`./view_most_recent_usage_report` command:
+
+.. code-block:: console
+   
+   $ cd /storage1/fs1/rvmartin/Active/Shared/StorageReports
+   $ ./view_most_recent_usage_report
+
+The controls are below.
+
+.. code-block:: none
+   
+   q - quit
+   j - down
+   k - up
+   / - search for text
+      n - next match
+      N - previous match
+
+Policy
+------
+
+This policy is not intended to impose any restrictions on your usage of Compute1 or Storage1. It's
+moreso intended to facilitate the data lifecycle of the group.
+
+1. The Archive directory should have the same structure as the Active directory. If you are
+   archiving `rvmartin/Active/lbindle/sgv` it should go in `rvmartin/Archive/lbindle/sgv`.
+2. If you are done with a directory, and it can be archived, move it to Archive. If at any point you
+   need to bring it back, it's easy to do with Globus (mind you it might take several days if it's
+   large).
+3. Before you leave the group, archive your entire project directory.
+4. Every 6 months to a year, go through your directories and archive anything that you can.
+

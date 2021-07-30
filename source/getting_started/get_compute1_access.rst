@@ -1,10 +1,10 @@
 .. include:: /fillers/contacts.rst
 .. include:: /fillers/links.rst
 
-Get access to Compute1
+Get Access to Compute1
 ======================
 
-Compute1 is the cluster we use for most of our computing work. Compute1 is located here at WashU,
+Compute1 is the cluster we use for most of our computing work. Compute1 is located at WashU
 and is administered by Research Infrastructure Services (RIS).
 
 If you need help getting set up on Compute1, or if you notice something on this page is out of date,
@@ -12,7 +12,7 @@ please contact |compute1-getting-started-contact|.
 
 Set up VPN access
 -----------------
-To access Compute1 from off-campus, you will need to use a VPN. Instructions for accessing
+To access Compute1 from off-campus, you need to use a VPN. Instructions for accessing
 the WashU VPNs can be found here: |vpn-instructions|. For help with the VPNs you should contact
 |vpn-contact|.
 
@@ -24,13 +24,11 @@ the WashU VPNs can be found here: |vpn-instructions|. For help with the VPNs you
 
 .. _access-request:
 
-Request access
+Request Access
 --------------
 
-To get access to Compute1 you need to submit the following: `Compute1 Access Request`_. To submit
-this form from off-campus, you might have to be on the VPN.
-
-You can copy-paste these into the form:
+To get access to Compute1 you need to submit the following form: `Compute1 Service Desk`_ > "Update an existing compute access group".
+You can copy-paste the fields from below.
 
 :Summary: Request for access to Compute1
 
@@ -46,9 +44,9 @@ You can copy-paste these into the form:
    This request may take RIS several days to process.
 
 
-Log on to Compute1
-------------------
-Once your :ref:`access request <access-request>` is approved, you should be able to :code:`ssh` in to
+Logging on to Compute1
+----------------------
+Once your :ref:`access request <access-request>` is approved you can :code:`ssh` into
 Compute1.
 
 .. note::
@@ -61,7 +59,7 @@ Compute1.
    .. include:: /fillers/compute1_vpns.rst
 
 
-Try to :code:`ssh` into Compute1
+:code:`ssh` into Compute1:
 
 .. code-block:: console
 
@@ -81,7 +79,7 @@ A successful log in will look similar to this
    Last login: Fri Sep 11 16:47:45 2020 from workstation.dhcp.wustl.edu
    [wustlkey@compute1-client-1 ~]$
 
-If you get an error, you will have to |ris-open-a-ticket| with RIS. They will be able to fix whatever 
+If you get an error |ris-open-a-ticket| with RIS. They will be able to fix whatever 
 problem is preventing you from logging on.
 
 Once you can log on, you are ready to use Compute1!

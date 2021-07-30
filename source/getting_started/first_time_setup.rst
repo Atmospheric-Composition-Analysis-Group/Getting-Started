@@ -1,7 +1,7 @@
 .. include:: /fillers/contacts.rst
 
-Perform first time setup
-========================
+First Time Setup
+================
 
 .. note::
 
@@ -62,7 +62,7 @@ Now, you can load these setting like so:
 
    :code:`MY_PROJECTS_DIR` is the only variable you need to modify in :code:`lsf-conf.rc`.
 
-Auto-load LSF settings
+Auto-load LSF Settings
 ----------------------
 
 You are going to want to :code:`source lsf-conf.rc` everytime you log on to Compute1. Therefore, you can add some lines
@@ -102,7 +102,7 @@ Then check that :code:`MY_PROJECTS_DIR` was automatically set.
 
 .. _download_interactive_bsub:
 
-Download starter job
+Download Starter Job
 --------------------
 
 Lastly, download :code:`interactive.bsub`. This is a basic :term:`interactive job` script. In the future, you can expand on it as you need,

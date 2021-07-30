@@ -1,13 +1,13 @@
-Welcome to the group!
-=====================
+Atmospheric Composition and Analysis Group
+==========================================
 
 .. note::
-   If you are only doing data analysis with software like Matlab or Python, it is likely easier to install those locally on your laptop rather than going through the process of getting access to Compute1. WashU has instructions for installing Matlab, and if you're a Python person, Anaconda is easy to install on every operating systems. Feel free to ask for help if you have any questions!
+   If you are doing data analysis with Matlab or Python it is easier to install those on your laptop rather than going through the process of getting access to Compute1. WashU has instructions for Matlab, and Anaconda is easy to install for Python. Don't hesitate to ask for help!
 
 .. toctree::
    :maxdepth: 2
    :numbered:
-   :caption: Getting Started:
+   :caption: For new members
 
    getting_started/join_slack
    getting_started/get_compute1_access
@@ -18,17 +18,17 @@ Welcome to the group!
 
 .. toctree::
    :maxdepth: 1
-   :caption: Instructions:
+   :caption: Tutorials
 
    using_matlab
 
 
 .. toctree::
    :maxdepth: 1
-   :caption: Resources/information:
+   :caption: Other info
 
    b_commands
-   storage_policy
+   storage
    compute1_info
    glossary
    contacts

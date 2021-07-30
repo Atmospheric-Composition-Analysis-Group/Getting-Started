@@ -1,4 +1,4 @@
-What next?
+Next steps
 ==========
 
 Now you should start getting familiar with Compute1! Don't hesitate to ask for help on Slack---that's what it's there for! In our
@@ -11,8 +11,8 @@ at the :ref:`b-commands` page for a quick reference of useful commands for inter
 who to contact for help, or to report out-of-date information.
 
 
-Optional: Join GitHub
----------------------
+Join GitHub (recommended)
+-------------------------
 
 `GitHub <https://github.com/>`_ is a software development and version control platform. GitHub is used
 extensively by the GEOS-Chem community (e.g., user support from the GEOS-Chem Support Team) along

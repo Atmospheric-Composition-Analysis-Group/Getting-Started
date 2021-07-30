@@ -6,7 +6,7 @@
 
 .. _RIS Knowledge Base: https://confluence.ris.wustl.edu/display/ITKB/Scientific+Compute+Platform
 
-.. _Compute1 Access Request: https://jira.ris.wustl.edu/servicedesk/customer/portal/1/create/160
+.. _Compute1 Service Desk: https://jira.wustl.edu/servicedesk/customer/portal/2
 
 .. _Compute1 Quick Start: https://confluence.ris.wustl.edu/display/ITKB/Compute+Quick+Start
 
