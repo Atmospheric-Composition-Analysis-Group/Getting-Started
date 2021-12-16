@@ -1,6 +1,9 @@
 # GCHP Tips on Compute1 
 
-## Common Errors that Aren't Your Fault
+This page has tips for diagnosing GCHP crashes that were caused by Compute1 system errors, and steps you can take to improve the 
+robustness of your simulations.
+
+## Common Compute1 Errors That Will Crash Your Simulation
 
 There are two common errors on Compute1 that can crash GCHP simulations, even if the simulation is totally valid. In most case restarting/resuming your simulation will work. However, if you're running many simulations in parallel, these reliability issues can turn into a major headache. This page has tips for improving the robustness of GCHP simulations on Compute1, and remediation steps for crashes.
 
@@ -11,7 +14,7 @@ The two common transient (random/irregular) errors are:
 
 ### MPI Initialization errors
 
-**Identification**
+#### Identification
 MPI initialization errors are identified by a message at the top of the log file similar to 
 
 ```
@@ -30,12 +33,12 @@ experience performance degradation.
 
 This indicates a configuration error on RIS' end. Unfortunately, there isn't much we can do on our end beside report the offending host and job to RIS.
 
-**Remediation**
+#### Remediation
 Report the job number and hostname to RIS.
 
 ### Runtime read (i/o) errors
 
-**Identification**
+#### Identification
 These can be identified by a crash mid-simulation in the RUN stage of EXTDATA. You might see strings like 
 ```
 	pe=00199 FAIL at line=00256    FileMetadata.F90   <can not find time>
@@ -47,7 +50,7 @@ nf90_open: returned error code (-51) opening ./MetDir/2018/11/MERRA2.20181122.A1
 ```
 in the stack trace (the long list of error messages printed when the simulation crashes).
 
-**Remediation**
+#### Remediation
 I wrote [nf90_open_with_retries](https://github.com/LiamBindle/nf90_open_with_retries) as a workaround for this. The usage is described [here](https://github.com/LiamBindle/nf90_open_with_retries/blob/master/README.md).
 
 This won't catch every error, but it should help quite a bit. This is also a safe zero-diff update. You can replace any `nf90_open()` call with `nf90_open_with_retries()` (see the stack trace to find where the error originated and replace the netcdf open call).
