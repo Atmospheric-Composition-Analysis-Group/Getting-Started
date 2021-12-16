@@ -27,6 +27,7 @@ Atmospheric Composition and Analysis Group
    :maxdepth: 1
    :caption: Other info
 
+   compute1_gchp_troubleshooting.md
    b_commands
    storage
    compute1_info
