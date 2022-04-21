@@ -14,6 +14,14 @@
 
 .. _LSF Command Reference: https://hpc.llnl.gov/banks-jobs/running-jobs/lsf-commands
 
+.. _NASA Account Setup: https://www.nas.nasa.gov/hecc/support/kb/logging-into-nas-systems-for-the-first-time_539.html
+
+.. _NASA Subsequent Logins: https://www.nas.nasa.gov/hecc/support/kb/subsequent-logins-93/
+
+.. _NASA System Status: https://www.nas.nasa.gov/hecc/support/system_status.html
+
+.. _Cygwin: https://www.cygwin.com/
+
 .. _https://it.wustl.edu/items/connect/: https://it.wustl.edu/items/connect/
 
 .. |vpn-instructions| replace:: `https://it.wustl.edu/items/connect/`_
