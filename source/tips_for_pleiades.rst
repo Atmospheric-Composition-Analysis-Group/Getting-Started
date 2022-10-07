@@ -20,8 +20,34 @@ NASA provides detailed walk-through `NASA Account Setup`_:
 * Setting up public key and SSH passthrough would be helpful to make subsequent logging process easier:
 
     * Instructions: `NASA Subsequent Logins`_
-    * Setting up SSH passthrough requires linux-based terminal. Window users may need to resort to terminal such as `Cygwin`_
+    * Setting up SSH passthrough requires linux-based terminal. Windows users may need to resort to terminal such as `Cygwin`_
     * Tips: keep the Cygwin installer for the sake of future package installation such as vim (Cygwin does not install vim by default)
+
+* Differences between :code:`sfe`, :code:`pfe`, and :code:`lfe`
+
+    * :code:`sfe` will be only used for logging into NASA NAS system
+    * :code:`pfe` is ususally where we land on for compiling and submitting GCHP jobs
+    * :code:`lfe` is usually where we store massive data, such as restart files and outputs from GCHP simulations 
+
+.. note::
+    :code:`/nobackup` filesystem is mounted on :code:`lfe` as well, so we can also submit GCHP jobs on :code:`lfe`.
+
+* Shiftc data transferring tool
+
+    * Instructions for local transfer (within NASA NAS system): `shiftc local transfer`_
+    
+    * Instructions for installing shiftc on other clusters (e.g. Compute1): `shiftc remote transfer`_
+        
+.. note::
+    1. Transferring data (restarts and outputs from GCHP) from :code:`pfe` to :code:`lfe` would be very helpful to reduce the amount of storage we need on pfe
+    
+    2. In addition to installing shiftc on home node of Compute1, there is also an available container (:code:`docker(registry.gsc.wustl.edu/sleong/bbftp)`)
+
+    3. Add :code:`tail -f /dev/null` for batch data transferring on Compute1 to avoid losing connection to clusters.
+       
+       Then manually kill the compute1 job when transferring finished.
+
+       An example can be found at :code:`/Shared/WUCR3/output-nasa/transfer-04.bsub`
 
 Running GCHP on Pleiades
 ------------------------
@@ -34,8 +60,18 @@ Running GCHP on Pleiades
 
     * There is no :code:`/ExtData` like what we have on Compute1, but there are some customized downloaded inputs as follows:
 
-        * Sebastian has downloaded multiple required inputs at :code:`/nobackupp2/seastham/ExtData/`
-        * Dandan has downloaded required inputs for simulations in 2015 at :code:`/nobackup/dzhang8/ExtData/`
+       Sebastian has downloaded multiple required inputs at :code:`/nobackupp2/seastham/ExtData/`
+       
+       Dandan has downloaded required inputs for simulations in 2015 and 2018 at :code:`/nobackupp12/dzhang8/ExtData/`
+
+Processing outputs on Pleiades
+------------------------------
+
+* Specific data analysis node: `Lou Data Analysis Nodes`_ (LDAN) can be used for postprocessing data (e.g. GCHP diagonostics)
+
+* Python environment: source the environment script by :code:`source /u/dzhang8/python-gchp.env`
+
+* Need to bring data to disk when processing data on :code:`lfe` to avoid unpredictable time stuck for I/O processes (see `bring data to disk`_)
 
 .. note::
-    It would help to save space on Pleiades by first checking whether inputs you need are available or not and only download inputs you need
+    It would help save space on Pleiades by first checking whether inputs you need are available or not and only downloading inputs you need.

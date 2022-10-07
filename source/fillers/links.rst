@@ -20,6 +20,14 @@
 
 .. _NASA System Status: https://www.nas.nasa.gov/hecc/support/system_status.html
 
+.. _Lou Data Analysis Nodes: https://www.nas.nasa.gov/hecc/support/kb/lou-data-analysis-nodes_413.html
+
+.. _shiftc local transfer: https://www.nas.nasa.gov/hecc/support/kb/using-shift-for-local-transfers-and-tar-operations_512.html
+
+.. _shiftc remote transfer: https://www.nas.nasa.gov/hecc/support/kb/using-shift-for-remote-transfers-and-tar-operations_514.html
+
+.. _bring data to disk: https://www.nas.nasa.gov/hecc/support/kb/data-migration-facility-(dmf)-commands_250.html
+
 .. _Cygwin: https://www.cygwin.com/
 
 .. _https://it.wustl.edu/items/connect/: https://it.wustl.edu/items/connect/
