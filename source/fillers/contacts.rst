@@ -9,9 +9,9 @@
 
 .. |slack-contact| replace:: `Jourdan He`_
 
-.. |glossary-contact| replace:: `Liam Bindle`_
+.. |glossary-contact| replace:: `Jourdan He`_
 
-.. |this-site-contact| replace:: `Liam Bindle`_
+.. |this-site-contact| replace:: `Jourdan He`_
 
 .. |compute1-getting-started-contact| replace:: `Jourdan He`_
 
