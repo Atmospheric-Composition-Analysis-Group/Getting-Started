@@ -5,13 +5,15 @@
 
 .. _Shin Leong: sleong@wustl.edu
 
-.. |slack-contact| replace:: `Liam Bindle`_
+.. _Jourdan He: he.t@wustl.edu
+
+.. |slack-contact| replace:: `Jourdan He`_
 
 .. |glossary-contact| replace:: `Liam Bindle`_
 
 .. |this-site-contact| replace:: `Liam Bindle`_
 
-.. |compute1-getting-started-contact| replace:: `Liam Bindle`_
+.. |compute1-getting-started-contact| replace:: `Jourdan He`_
 
 .. |vpn-contact| replace:: `WashU IT`_
 
