@@ -1,7 +1,7 @@
 Data Storage
 ============
 
-This is a rolling copy of the group's storage policy. Our group's allocation is 1 PB of Active
+This is a rolling copy of the group's storage policy. Our group's allocation is 1.5 PB of Active
 plus 500 TB of Archive. Our Active allocation is at `/storage1/fs1/rvmartin/Active` and our Achive
 allocation is at `/storage1/fs1/rvmartin/Archive`. The Active allocation is where you should put 
 data that you are currently working with. Once a project finishes you should move its data to 
