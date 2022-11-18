@@ -42,7 +42,7 @@ It is a basic interactive job. Here is its contents:
    #BSUB -n 8
    #BSUB -R "rusage[mem=40000] span[hosts=1]"
    #BSUB -q rvmartin-interactive
-   #BSUB -a 'docker(registry.gsc.wustl.edu/sleong/base-engineering)'
+   #BSUB -a 'docker(registry.gsc.wustl.edu/sleong/esm:intel-2021.1.2)'
 
    cd /my-projects
    bash
