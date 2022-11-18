@@ -53,7 +53,7 @@ The lines at the top, starting with :code:`#BSUB`, are specifying LSF options:
 * :code:`-n 8` tells LSF this job needs 8 cores
 * :code:`-R "rusage[mem=40000] span[hosts=1]"` tells LSF this job needs 40 GB of memory and that all 8 cores should land on the same :term:`host` (exec node)
 * :code:`-q rvmartin-interactive` tells LSF which :term:`queue` this job should be put in
-* :code:`-a 'docker(registry.gsc.wustl.edu/sleong/base-engineering)'` tells LSF which :term:`container` this job should be ran inside
+* :code:`-a 'docker(registry.gsc.wustl.edu/sleong/esm:intel-2021.1.2)'` tells LSF which :term:`container` this job should be ran inside
 
 The other lines are the commands that are executed when the job lands on the exec node. This job
 navigates to your :term:`project directory` and starts a bash terminal (hence it being an interactive job):
@@ -64,7 +64,7 @@ navigates to your :term:`project directory` and starts a bash terminal (hence it
    bash
 
 Next, lets consider a batch job. A batch job does not have an interactive terminal. Here is an example of a
-batch job to run a GEOS-Chem simulation:
+batch job to run a GEOS-Chem Classic simulation:
 
 .. code-block:: bash
 
@@ -73,7 +73,7 @@ batch job to run a GEOS-Chem simulation:
    #BSUB -n 16
    #BSUB -W 168:00
    #BSUB -R "rusage[mem=40000] span[hosts=1]"
-   #BSUB -a 'docker(registry.gsc.wustl.edu/sleong/base-engineering)'
+   #BSUB -a 'docker(registry.gsc.wustl.edu/sleong/esm:intel-2021.1.2)'
    #BSUB -J "Example 1-year 2x2.5 GEOS-Chem simulation"
    #BSUB -N
    #BSUB -u wustlkey@wustl.edu
@@ -83,13 +83,18 @@ batch job to run a GEOS-Chem simulation:
    . /etc/bashrc                               # Source global bashrc file
    set -x                                      # Print executed commands
    set -e                                      # Exit immediately if a command fails
-   ulimit -s unlimited                         # Make max stack size large
+   # Unlimit resources (to prevent OS killing GCHP due to resource usage)
+   ulimit -c 0                  # coredumpsize
+   ulimit -l unlimited          # memorylocked
+   ulimit -u 50000              # maxproc
+   ulimit -v unlimited          # vmemoryuse
+   ulimit -s unlimited          # stacksize
+
    export OMP_STACKSIZE=500m                   # Make max stack size of threads large
    export OMP_NUM_THREADS=$LSB_DJOB_NUMPROC    # Set num threads based on bsub's -n argument
 
    # Execute simulation
-   cd /my-projects/geos-chem-example/geosfp_2x25_standard   # cd into run directory
-   ./geos  
+   ./gcclassic &> run.log  
 
 Documentation of all the :code:`#BSUB` options can be found in the |bsub-docs|. The important 
 new ones here are:
