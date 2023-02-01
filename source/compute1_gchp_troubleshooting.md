@@ -88,10 +88,10 @@ Note: The performance of old/new nodes is comparable in terms of running GCHP si
 The problem of long-time stuck on the stage of ExtData Initialization can be fixed by:
 
 1. Add MPI platform of skx. \
-Specifically, adding line of: `export I_MPI_PLATFORM=skx` in your `lsf-conf.rc` file on `$HOME` directory; and
+Specifically, add line of: `export I_MPI_PLATFORM=skx` in your `lsf-conf.rc` file on `$HOME` directory; and
 2. Specify running nodes starting with old chipset first (the one with 72 cores per node). \
 This can be done by using the `bsub-m-list.sh` in the `/Shared` directory. \
 Specific usage is:
-```
-bsub -m "$(/storage1/fs1/rvmartin/Active/Shared/bsub-m-list.sh)" < $your_bsub_scripts
-```
+   ```
+   bsub -m "$(/storage1/fs1/rvmartin/Active/Shared/bsub-m-list.sh)" < $your_bsub_scripts
+   ```
