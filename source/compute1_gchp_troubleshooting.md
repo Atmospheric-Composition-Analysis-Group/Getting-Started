@@ -68,3 +68,30 @@ If you experience NetCDF read errors elsewhere in the code (i.e., not in `NetCDF
 ## How to Automatically Requeue & Restart a Simulation
 
 There is a script in `/storage1/fs1/rvmartin/Active/Shared` called `configure-autorun-until-checkpoint-exists`.  Review the instructions at the top of this file for instructions on how to set up automatically requeuing/restarting GCHP simulations. It's important you use these with caution because your simulation will restart forever until the DONE criteria is reached. If the DONE criteria is never reached, your job will run forever (e.g., you have an actual error in one of your config files). You can always kill a job with `bkill JOBNUMBER` though.
+
+## Running GCHP Simulations with Mixed Chipsets
+
+### Selecting Same Chipset
+
+Running GCHP simulations with same chipset can help speed up the stage of ExtData Initialization (reading external files), which can be achieved by:
+
+1. Selecting old hosts (72 cores per node): \
+`#BSUB -R 'select[model==Intel_Xeon_Gold6154CPU300GHz]'`
+
+2. Selecting new hosts (64 cores per node): \
+`#BSUB -R 'select[model==Intel_Xeon_Gold6242CPU280GHz]'`
+
+Note: The performance of old/new nodes is comparable in terms of running GCHP simulations
+
+### Running GCHP on Mixed chipsets
+
+The problem of long-time stuck on the stage of ExtData Initialization can be fixed by:
+
+1. Add MPI platform of skx. \
+Specifically, adding line of: `export I_MPI_PLATFORM=skx` in your `lsf-conf.rc` file on `$HOME` directory; and
+2. Specify running nodes starting with old chipset first (the one with 72 cores per node). \
+This can be done by using the `bsub-m-list.sh` in the `/Shared` directory. \
+Specific usage is:
+```
+bsub -m "$(/storage1/fs1/rvmartin/Active/Shared/bsub-m-list.sh)" < $your_bsub_scripts
+```
