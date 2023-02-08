@@ -39,7 +39,7 @@ Shiftc data transferring tool
     
 * Instructions for installing shiftc on other clusters (e.g. Compute1): `shiftc remote transfer`_
 
-    * Add :code:`sup` to your :code:`$PATH`. For example, if your :code:`sup` is located at :code:`$HOME/bin/sup`, then add :code:`export PATH=$PATH:$HOME/bin` in :code:`.bashrc_profile` and :code:`lsf-conf.rc`
+    * Add :code:`sup` to your :code:`$PATH`. For example, if your :code:`sup` is located at :code:`$HOME/bin/sup`, then add :code:`export PATH=$PATH:$HOME/bin` in :code:`.bash_profile` and :code:`lsf-conf.rc`
     * The command of :code:`sup shiftc` will expire every 604800s, we can check by using such as :code:`sup shiftc --status --state=run` on Compute1 home node
 
 * Transferrring between Compute1 and NASA by batch jobs
