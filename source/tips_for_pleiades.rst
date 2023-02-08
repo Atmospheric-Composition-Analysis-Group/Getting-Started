@@ -47,7 +47,23 @@ NASA provides detailed walk-through `NASA Account Setup`_:
        
        Then manually kill the compute1 job when transferring finished.
 
-       An example can be found at :code:`/Shared/WUCR3/output-nasa/transfer-04.bsub`
+       An example:
+
+       .. code-block:: none
+
+        #!/bin/bash
+        #BSUB -n 1
+        #BSUB -R "rusage[mem=50G] span[ptile=1] select[mem < 500GB] order[-slots]"
+        #BSUB -q rvmartin
+        #BSUB -a 'docker(registry.gsc.wustl.edu/sleong/bbftp)'
+        #BSUB -N
+        #BSUB -u dandan.z@wustl.edu
+        #BSUB -o transfer-%J.txt
+        #BSUB -J "transfer"
+        
+        cd /my-projects
+        sup shiftc pfe:/nobackup/dzhang8/GEOSChem.ACAG.20180101*.nc4 .
+        tail -f /dev/null
 
 Running GCHP on Pleiades
 ------------------------
