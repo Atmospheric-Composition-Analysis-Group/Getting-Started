@@ -16,7 +16,7 @@
 
 .. _NASA Account Setup: https://www.nas.nasa.gov/hecc/support/kb/logging-into-nas-systems-for-the-first-time_539.html
 
-.. _NASA Subsequent Logins: https://www.nas.nasa.gov/hecc/support/kb/subsequent-logins-93/
+.. _NASA SSH Passthrough: https://www.nas.nasa.gov/hecc/support/kb/setting-up-public-key-ssh-passthrough-94/
 
 .. _NASA System Status: https://www.nas.nasa.gov/hecc/support/system_status.html
 

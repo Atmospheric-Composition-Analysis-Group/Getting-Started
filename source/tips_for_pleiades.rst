@@ -19,7 +19,7 @@ NASA provides detailed walk-through `NASA Account Setup`_:
 
 * Setting up public key and SSH passthrough would be helpful to make subsequent logging process easier:
 
-    * Instructions: `NASA Subsequent Logins`_
+    * Instructions: `NASA SSH Passthrough`_
     * Setting up SSH passthrough requires linux-based terminal. Windows users may need to resort to terminal such as `Cygwin`_
     * Tips: keep the Cygwin installer for the sake of future package installation such as vim (Cygwin does not install vim by default)
 
@@ -32,17 +32,20 @@ NASA provides detailed walk-through `NASA Account Setup`_:
 .. note::
     :code:`/nobackup` filesystem is mounted on :code:`lfe` as well, so we can also submit GCHP jobs on :code:`lfe`.
 
-* Shiftc data transferring tool
+Shiftc data transferring tool
+-----------------------------
 
-    * Instructions for local transfer (within NASA NAS system): `shiftc local transfer`_
+* Instructions for local transfer (within NASA NAS system): `shiftc local transfer`_
     
-    * Instructions for installing shiftc on other clusters (e.g. Compute1): `shiftc remote transfer`_
-        
-.. note::
-    1. Transferring data (restarts and outputs from GCHP) from :code:`pfe` to :code:`lfe` would be very helpful to reduce the amount of storage we need on pfe
-    
-    2. In addition to installing shiftc on home node of Compute1, there is also an available container (:code:`docker(registry.gsc.wustl.edu/sleong/bbftp)`)
+* Instructions for installing shiftc on other clusters (e.g. Compute1): `shiftc remote transfer`_
 
+    * Add :code:`sup` to your :code:`$PATH`. For example, if your :code:`sup` is located at :code:`$HOME/bin/sup`, then add :code:`export PATH=$PATH:$HOME/bin` in :code:`.bashrc_profile` and :code:`lsf-conf.rc`
+    * The command of :code:`sup shiftc` will expire every 604800s, we can check by using such as :code:`sup shiftc --status --state=run` on Compute1 home node
+
+* Transferrring between Compute1 and NASA by batch jobs
+
+    1. Installing :code:`shiftc` on home node of Compute1 is also required for batch jobs
+    2. There is also an available container (:code:`docker(registry.gsc.wustl.edu/sleong/bbftp)`)
     3. Add :code:`tail -f /dev/null` for batch data transferring on Compute1 to avoid losing connection to clusters.
        
        Then manually kill the compute1 job when transferring finished.
@@ -64,6 +67,10 @@ NASA provides detailed walk-through `NASA Account Setup`_:
         cd /my-projects
         sup shiftc pfe:/nobackup/dzhang8/GEOSChem.ACAG.20180101*.nc4 .
         tail -f /dev/null
+
+
+.. note::
+    Transferring data (restarts and outputs from GCHP) from :code:`pfe` to :code:`lfe` would be very helpful to reduce the amount of storage we need on pfe
 
 Running GCHP on Pleiades
 ------------------------
