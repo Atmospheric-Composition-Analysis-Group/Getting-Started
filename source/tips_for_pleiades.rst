@@ -101,7 +101,7 @@ Processing outputs on Pleiades
 
 * Python environment: source the environment script by :code:`source /u/dzhang8/python-gchp.env`
 
-* Need to bring data to disk when processing data on :code:`lfe` to avoid unpredictable time stuck for I/O processes (see `bring data to disk`_)
+* Need to bring data to disk before processing data on :code:`lfe` to avoid unpredictable time stuck for I/O processes (see `bring data to disk`_)
 
 .. note::
     It would help save space on Pleiades by first checking whether inputs you need are available or not and only downloading inputs you need.
