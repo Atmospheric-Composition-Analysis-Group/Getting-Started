@@ -22,6 +22,13 @@ NASA provides detailed walk-through `NASA Account Setup`_:
     * Instructions: `NASA SSH Passthrough`_
     * Setting up SSH passthrough requires linux-based terminal. Windows users may need to resort to terminal such as `Cygwin`_
     * Tips: keep the Cygwin installer for the sake of future package installation such as vim (Cygwin does not install vim by default)
+    * Compute1 may lose the added :code:`SSH Passthrough` to NASA after re-logging. We can manually add it to :code:`.bash_profile` with:
+    
+       .. code-block:: none
+        
+        # add for nasa
+        eval `ssh-agent -s`
+        ssh-add ~/.ssh/id_rsa
 
 * Differences between :code:`sfe`, :code:`pfe`, and :code:`lfe`
 
