@@ -48,6 +48,18 @@ The controls are below.
       n - next match
       N - previous match
 
+To view the total Active storage space left on rvmartin allocation:
+
+.. code-block:: console
+   
+   $ mmlsquota --block-size auto -j rvmartin_active rdcw-fs1
+   
+To view the total Active storage space left on rvmartin2 allocation:
+
+.. code-block:: console
+   
+   $ mmlsquota --block-size auto -j rvmartin2_active rdcw-fs2
+
 Policy
 ------
 
