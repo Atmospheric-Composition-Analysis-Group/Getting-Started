@@ -20,6 +20,8 @@
 
 .. _NASA System Status: https://www.nas.nasa.gov/hecc/support/system_status.html
 
+.. _PBS Commands: https://www.nas.nasa.gov/hecc/support/kb/commonly-used-pbs-commands_174.html
+
 .. _Lou Data Analysis Nodes: https://www.nas.nasa.gov/hecc/support/kb/lou-data-analysis-nodes_413.html
 
 .. _shiftc local transfer: https://www.nas.nasa.gov/hecc/support/kb/using-shift-for-local-transfers-and-tar-operations_512.html

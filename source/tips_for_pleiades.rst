@@ -86,6 +86,10 @@ Running GCHP on Pleiades
 
 * Example running script can be found at :code:`/u/dzhang8/run.pbs`
 
+* NASA Pleiades system uses PBS for job scheduling. Commonly used PBS commands can be found at `PBS Commands`_
+
+* Real-time usage of different clusters on NASA Pleiades can be monitored at `NASA System Status`_ (Note it will take several minutes for the website to be updated)
+
 * Model inputs :code:`/ExtData`
 
     * There is no :code:`/ExtData` like what we have on Compute1, but there are some customized downloaded inputs as follows:
