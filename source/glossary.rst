@@ -6,7 +6,7 @@ Terminology
 ===========
 .. note::
 
-   If the glossary is missing a term you don't underrstand, please contact |glossary-contact|.
+   If the glossary is missing a term you don't understand, please contact |glossary-contact|.
 
 .. glossary::
    :sorted:

@@ -180,3 +180,28 @@ You can then run the matlab command directly:
 
    [wustlkey@compute1-exec-123 ~]$ matlab
    MATLAB is selecting SOFTWARE OPENGL rendering.
+
+Running MATLAB noninteractively in terminal
+-------------------------------------------
+
+* RIS has created a MATLAB container (:code:`docker(gcr.io/ris-registry-shared/matlab)`), which you can use to submit batch MATLAB jobs
+
+* Need to add MATLAB path (:code:`/scratch1/fs1/ris/application/:/scratch1/fs1/ris/application/`) to :code:`LSF_DOCKER_VOLUMES` in your :code:`lsf-conf.rc`
+
+* Also add it to your :code:`$PATH` by :code:`export PATH=/scratch1/fs1/ris/application/matlab/2021b/bin/:$PATH`
+
+* Using MATLAB command noninteractively: :code:`matlab -nodesktop -nodisplay -sd "${your_code_directory}" -r "${run_script_without_.m}; exit"`
+
+An example:
+
+.. code-block:: none
+
+   #BSUB -n 10
+   #BSUB -R "rusage[mem=300G] span[hosts=1] select[mem < 500GB] order[-slots]"
+   #BSUB -q rvmartin
+   #BSUB -a 'docker(gcr.io/ris-registry-shared/matlab)'
+   #BSUB -u dandan.z@wustl.edu
+   #BSUB -J "Plot frame"
+   
+   cd /my-projects2/code/GCHP-v13.4.1/c720_animation
+   matlab -nodesktop -nodisplay -sd "/my-projects2/code/GCHP-v13.4.1/c720_animation" -r "Plot_C720_HTAPv3_AOD_Species_201801_frame; exit"
