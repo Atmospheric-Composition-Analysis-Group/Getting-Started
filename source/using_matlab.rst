@@ -200,7 +200,9 @@ An example:
    #BSUB -R "rusage[mem=300G] span[hosts=1] select[mem < 500GB] order[-slots]"
    #BSUB -q rvmartin
    #BSUB -a 'docker(gcr.io/ris-registry-shared/matlab)'
+   #BSUB -N
    #BSUB -u dandan.z@wustl.edu
+   #BSUB -o joblog.txt
    #BSUB -J "Plot frame"
    
    cd /my-projects2/code/GCHP-v13.4.1/c720_animation
