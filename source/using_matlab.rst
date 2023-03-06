@@ -201,7 +201,7 @@ An example:
    #BSUB -q rvmartin
    #BSUB -a 'docker(gcr.io/ris-registry-shared/matlab)'
    #BSUB -N
-   #BSUB -u dandan.z@wustl.edu
+   #BSUB -u <your_wustl_key>@wustl.edu
    #BSUB -o joblog.txt
    #BSUB -J "Plot frame"
    

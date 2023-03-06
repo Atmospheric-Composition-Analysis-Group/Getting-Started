@@ -48,6 +48,7 @@ Shiftc data transferring tool
 
     * Add :code:`sup` to your :code:`$PATH`. For example, if your :code:`sup` is located at :code:`$HOME/bin/sup`, then add :code:`export PATH=$PATH:$HOME/bin` to :code:`.bash_profile` and :code:`lsf-conf.rc`
     * The command of :code:`sup shiftc` will expire every 604800s. We can check by using such as :code:`sup shiftc --status --state=run` on Compute1 home node
+    * Transferring outside NASA system needs to be initiated from remote cluster, i.e., using :code:`sup shiftc` on remote cluster to transfer files from/to NASA system
 
 * Transferrring between Compute1 and NASA by batch jobs
 
@@ -67,7 +68,7 @@ Shiftc data transferring tool
         #BSUB -q rvmartin
         #BSUB -a 'docker(registry.gsc.wustl.edu/sleong/bbftp)'
         #BSUB -N
-        #BSUB -u dandan.z@wustl.edu
+        #BSUB -u <your_wustl_key>@wustl.edu
         #BSUB -o transfer-%J.txt
         #BSUB -J "transfer"
         
@@ -94,9 +95,9 @@ Running GCHP on Pleiades
 
     * There is no :code:`/ExtData` like what we have on Compute1, but there are some customized downloaded inputs as follows:
 
-       Sebastian has downloaded multiple required inputs at :code:`/nobackupp2/seastham/ExtData/`
+       Sebastian has downloaded multiple required inputs at :code:`/nobackup/seastham/ExtData/`
        
-       Dandan has downloaded required inputs for simulations in 2015 and 2018 at :code:`/nobackupp12/dzhang8/ExtData/`
+       Dandan has downloaded required inputs for simulations in 2015 and 2018 at :code:`/nobackup/dzhang8/ExtData/`
 
 Processing outputs on Pleiades
 ------------------------------
