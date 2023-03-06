@@ -97,7 +97,7 @@ Running GCHP on Pleiades
 
        Sebastian has downloaded multiple required inputs at :code:`/nobackup/seastham/ExtData/`
        
-       Dandan has downloaded required inputs for simulations in 2015 and 2018 at :code:`/nobackup/dzhang8/ExtData/`
+       Dandan has downloaded required inputs for simulations in 2018 and 2019 at :code:`/nobackup/dzhang8/ExtData/`
 
 Processing outputs on Pleiades
 ------------------------------
