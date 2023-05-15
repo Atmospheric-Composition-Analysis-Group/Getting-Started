@@ -1,2 +1,2 @@
-* `<danforthvpn.wustl.edu>`_ (recommended)
-* `<msvpn.wusm.wustl.edu>`_
+* danforthvpn.wustl.edu (recommended)
+* msvpn.wusm.wustl.edu

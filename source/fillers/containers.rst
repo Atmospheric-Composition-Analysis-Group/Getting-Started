@@ -17,4 +17,4 @@
    Official GCPy container.
 
 :code:`1dandan/netcdf-utils:latest`
-   An environment with NetCDF Operators (NCO), Climate Data Operators (CDO), and utilities for regridding data (`gridspec`_, `sparselt`_). Running the container requires activation by :code:`. /etc/bashrc`
+   An environment with NetCDF Operators (NCO), Climate Data Operators (CDO), and utilities for regridding data (`gridspec`_ and `sparselt`_). Running the container requires activation by :code:`. /etc/bashrc`
