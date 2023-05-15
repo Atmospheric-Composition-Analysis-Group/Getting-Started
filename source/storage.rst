@@ -13,7 +13,7 @@ The Active allocation is where you should put
 data that you are currently working with. Once a project finishes you should move its data to 
 Archive. 
 
-Data Transfer between Acitve and Archive
+Data Transfer between Active and Archive
 -----------------------------------------
 
 * `Globus <https://app.globus.org/>`_ (Recommended): The Globus endpoints for Storage1 are named :literal:`Wash U RIS storage1 dtn1` and :literal:`Wash U RIS storage1 dtn2`.
