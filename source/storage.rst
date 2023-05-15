@@ -1,14 +1,24 @@
 Data Storage
 ============
 
-This is a rolling copy of the group's storage policy. Our group's allocation is 1.5 PB of Active
-plus 505 TB of Archive. Our Active allocation is at :code:`/storage1/fs1/rvmartin/Active` (1 PB) and :code:`/storage1/fs1/rvmartin2/Active` (0.5 PB). Our Achive
-allocation is at :code:`/storage1/fs1/rvmartin/Archive` (500 TB) and :code:`/storage1/fs1/rvmartin2/Archive` (5 TB). The Active allocation is where you should put 
+This is a rolling copy of the group's storage policy. 
+
+Our group's allocation is 1.5 PB of Active
+plus 505 TB of Archive. Our Active allocation is at :code:`/storage1/fs1/rvmartin/Active` (1 PB) and :code:`/storage1/fs1/rvmartin2/Active` (0.5 PB). 
+
+Our Archive
+allocation is at :code:`/storage1/fs1/rvmartin/Archive` (1.5 PB) and :code:`/storage1/fs1/rvmartin2/Archive` (5 TB). 
+
+The Active allocation is where you should put 
 data that you are currently working with. Once a project finishes you should move its data to 
 Archive. 
 
-To transfer data between Active and Archive, you should use Globus or the :code:`safe-transfer` script
-in the :code:`/Shared` directory.
+Data Transfer between Acitve and Archive
+-----------------------------------------
+
+* `Globus <https://app.globus.org/>`_ (Recommended): The Globus endpoints for Storage1 are named :literal:`Wash U RIS storage1 dtn1` and :literal:`Wash U RIS storage1 dtn2`.
+
+* The :code:`safe-transfer` script in the :code:`/Shared` directory.
 
 Checking usage
 --------------
