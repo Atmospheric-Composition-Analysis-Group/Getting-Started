@@ -42,9 +42,9 @@ See the :ref:`b-commands page <b-commands>` for a quick overview of commands for
 Mounting Storage1 on your Local Machine
 ---------------------------------------
 
-* `MacOS instructions <https://confluence.ris.wustl.edu/display/ITKB/How+Do+I+Mount+My+Research+Storage+Drive+on+macOS>`_
-* `Windows instructions <https://confluence.ris.wustl.edu/display/ITKB/How+Do+I+Mount+My+Research+Storage+Drive+on+Windows>`_
-* Linux instructions: Liam can provide you instructions
+* `MacOS instructions <https://docs.ris.wustl.edu/doc/storage/macos/index.html>`_
+* `Windows instructions <https://docs.ris.wustl.edu/doc/storage/windows/index.html>`_
+* `Linux instructions <https://docs.ris.wustl.edu/doc/storage/linux/index.html>`_
 
 Available Containers (current)
 ------------------------------
