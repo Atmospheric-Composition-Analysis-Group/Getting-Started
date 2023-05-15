@@ -1,10 +1,10 @@
 
 
-.. _RIS User Manual: https://confluence.ris.wustl.edu/display/RSUM/User+Manual
+.. _RIS User Manual: https://docs.ris.wustl.edu/index.html
 
 .. _Open a Ticket: https://jira.wustl.edu/servicedesk/customer/portal/2/create/27
 
-.. _RIS Knowledge Base: https://confluence.ris.wustl.edu/display/ITKB/Scientific+Compute+Platform
+.. _RIS Knowledge Base: https://docs.ris.wustl.edu/doc/compute/compute-recipes.html
 
 .. _Compute1 Service Desk: https://jira.wustl.edu/servicedesk/customer/portal/2
 
@@ -31,6 +31,10 @@
 .. _bring data to disk: https://www.nas.nasa.gov/hecc/support/kb/data-migration-facility-(dmf)-commands_250.html
 
 .. _Cygwin: https://www.cygwin.com/
+
+.. _gridspec: https://github.com/LiamBindle/gridspec
+
+.. _sparselt: https://github.com/LiamBindle/sparselt
 
 .. _https://it.wustl.edu/items/connect/: https://it.wustl.edu/items/connect/
 

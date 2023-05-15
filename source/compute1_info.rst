@@ -33,7 +33,12 @@ LSF documentation:
 
 See the :ref:`b-commands page <b-commands>` for a quick overview of commands for interacting with LSF.
 
-The `Globus <https://app.globus.org/>`_ endpoint for Storage1 is named :literal:`Wash U RIS storage1 dtn1`.
+Data Transfer between Acitve and Archive through `Globus <https://app.globus.org/>`_
+------------------------------------------------------------------------------------
+
+The Globus endpoint for Storage1 is named :literal:`Wash U RIS storage1 dtn1` and :literal:`Wash U RIS storage1 dtn2`.
+
+The Globus endpoint for GEOS-Chem input data is named :literal:`GEOS-Chem data (WashU)`
 
 Mounting Storage1 on your Local Machine
 ---------------------------------------
