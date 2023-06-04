@@ -21,6 +21,7 @@ Atmospheric Composition and Analysis Group
    :caption: Tutorials
 
    using_matlab
+   for_rotation
 
 
 .. toctree::

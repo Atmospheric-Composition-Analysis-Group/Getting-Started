@@ -2,17 +2,19 @@
 
 .. include:: /fillers/contacts.rst
 
-Using MATLAB
+.. _using-matlab:
+
+Using MatLab
 ============
 
-For help with running MATLAB on Compute1, you can contact |matlab-contact|.
+For help with running MatLab on Compute1, you can contact |matlab-contact|.
 
 
-Set up the MATLAB license
+Set up the MatLab license
 -------------------------
 
-Prerequisite for using MATLAB is to setup the MATLAB license. Shown below is the step that must be
-taken to setup the license for MATLAB. You only need to set it up one time.
+Prerequisite for using MatLab is to setup the MatLab license. Shown below is the step that must be
+taken to setup the license for MatLab. You only need to set it up one time.
 
 SSH in to Compute1:
 
