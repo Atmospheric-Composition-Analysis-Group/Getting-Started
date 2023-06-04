@@ -1,6 +1,7 @@
 
 .. include:: /fillers/links.rst
 
+.. _learn-to-use-compute1:
 
 Learn to use Compute1
 =====================

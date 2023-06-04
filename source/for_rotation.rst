@@ -12,7 +12,7 @@ Example Python scripts
 You are encouraged to read the `Python Data Science Handbook <https://jakevdp.github.io/PythonDataScienceHandbook/index.html>`_ if you are new to python. 
 Commonly used python libraries inlcude `xarray <https://docs.xarray.dev/en/stable/>`_, `pandas <https://pandas.pydata.org/>`_, `numpy <https://numpy.org/>`_, `matplotlib <https://matplotlib.org/>`_ and `cartopy <https://scitools.org.uk/cartopy/docs/latest/>`_.  
 
-Script to make a map from GCHP output:
+Script to make maps from GCHP output:
 
 .. code-block:: python
 
@@ -21,7 +21,7 @@ Script to make a map from GCHP output:
     """
     Created on Thu Feb 16 13:02:46 2023
     @author: yanyu
-    edited: Haihui 
+    edit: Haihui 
     """
 
     import matplotlib.pyplot as plt
@@ -66,7 +66,7 @@ Script to make a map from GCHP output:
 
 
 
-Script to make scatter plots:
+Script to make scatter plots comparing simulations to observations:
 
 .. code-block:: python
 
@@ -76,7 +76,7 @@ Script to make scatter plots:
     Created on Thu Feb 16 16:41:56 2023
 
     @author: yanyu
-    edited: Haihui 
+    edit: Haihui 
     """
     import numpy as np
     import matplotlib.pyplot as plt
@@ -231,5 +231,6 @@ Running your scripts on Compute1
 --------------------------------
 
 You can run your python scripts on compute1 interactively or on the background by submitting an interactive or batch job using the :code:`geoschem/gcpy:latest` docker. 
+Refer to :ref:`Learn to use Compute1 <learn-to-use-compute1>` for more instructions.
 
-To run MatLab on Compute1, refer to :ref:`Using MatLab <using-matlab>`
+To run MatLab on Compute1, refer to :ref:`Using MatLab <using-matlab>`.
