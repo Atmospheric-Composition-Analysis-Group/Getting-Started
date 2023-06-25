@@ -1,3 +1,5 @@
+.. include:: /fillers/links.rst
+
 :code:`registry.gsc.wustl.edu/sleong/base-engineering`
    A general environment for ACAG based on Intel compilers. It contains GEOS-Chem/GCHP dependencies, NetCDF operators, etc.
 
