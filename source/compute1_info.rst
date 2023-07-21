@@ -22,7 +22,8 @@ Resources for learning about Compute1:
 Other useful tutorials:
 
 * `Git tutorial <https://git-scm.com/docs/gittutorial>`_
-* `Docker tutorial <https://docs.docker.com/get-started/>`_`
+* `Docker tutorial <https://docs.docker.com/get-started/>`_
+* `Fortran tutorial <https://fortran-lang.org/en/learn/quickstart/>`_
 
 Report a problem to RIS: |ris-open-a-ticket|
 
