@@ -49,7 +49,13 @@ Open :code:`lsf-conf.rc`
 
    [wustlkey@compute1-client-1 ~]$ vim lsf-conf.rc
 
-and modify :code:`MY_PROJECTS_DIR` so that it points to your project directory (it needs to be the :term:`absolute path`).
+and add an environment variable at the bottom:
+
+.. code-block:: console
+
+   export MY_PROJECTS_DIR=/storage1/fs1/rvmartin/Active/wustlkey
+
+Make sure :code:`MY_PROJECTS_DIR` points to your project directory (it needs to be the :term:`absolute path`).
 Save :code:`lsf-conf.rc`. 
 
 Now, you can load these setting like so:
