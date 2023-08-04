@@ -15,6 +15,9 @@
 :code:`1dandan/gchp-esmf8.3:2023-04`
    An environment with ESMF v8.3.1 to support GCHP v14 simulations based on :code:`registry.gsc.wustl.edu/sleong/esm:intel-2021.1.2`.
 
+:code:`yidant/gchp14:gnu`
+   An environment with ESMF v8.4.2 to support GCHP v14 simulations based on GNU compilers. It is based on :code:`registry.gsc.wustl.edu/sleong/base-engineering-gcc`.
+
 :code:`geoschem/gcpy:latest`
    Official GCPy container.
 
