@@ -7,13 +7,15 @@
 
 .. _Jourdan He: he.t@wustl.edu
 
-.. |slack-contact| replace:: `Jourdan He`_
+.. _Yidan Tang: t.yidan@wustl.edu
 
-.. |glossary-contact| replace:: `Jourdan He`_
+.. |slack-contact| replace:: `Yidan Tang`_
 
-.. |this-site-contact| replace:: `Jourdan He`_
+.. |glossary-contact| replace:: `Yidan Tang`_
 
-.. |compute1-getting-started-contact| replace:: `Jourdan He`_
+.. |this-site-contact| replace:: `Yidan Tang`_
+
+.. |compute1-getting-started-contact| replace:: `Yidan Tang`_
 
 .. |vpn-contact| replace:: `WashU IT`_
 
