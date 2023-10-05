@@ -50,7 +50,7 @@ Mounting Storage1 on your Local Machine
 Available Containers (current)
 ------------------------------
 
-Official containers, supported by RIS:
+You can find official containers supported by GCST through `Docker Hub <https://hub.docker.com/r/geoschem/gchp>`_. Here are containers supported by RIS and group members:
 
 .. include:: /fillers/containers.rst
 
