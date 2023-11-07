@@ -19,7 +19,7 @@ Data Transfer between Active and Archive
 * `Globus <https://app.globus.org/>`_ (Recommended): The Globus endpoints for Storage1 are named :literal:`RIS Storage1`, :literal:`Wash U RIS storage1 dtn1` and :literal:`Wash U RIS storage1 dtn2`.
 
    * File status can be checked by: :code:`mmlsattr -L $FILE_PATH`, where :code:`Misc attributes` of :code:`ARCHIVE OFFLINE` means the file has been moved from :code:`cache` to :code:`tape`, and :code:`ARCHIVE` means the file is on :code:`cache`.
-   * Globus transfers files on :code:`cache` seamlessly with fast speed, while experiencing unpredictable delays and probably denoting :code:`endpoint error`, ranging from several minutes to hours, for files on :code:`tape`.
+   * Globus transfers files on :code:`cache` seamlessly with fast speed, while experiencing unpredictable delays, ranging from several minutes to hours, and probably denoting :code:`endpoint error` for files on :code:`tape`.
    * Manually bringing files from :code:`tape` to :code:`cache` in advance, called rehydration, can speed up Globus transferring a lot, which can be achived by :code:`file` command. Specific usage is running :code:`file $FILE_PATH` from a home node (compute1-client-\*). Wildcards (\*) or rehydrating all files in a directory is also supported for :code:`file` command.
 * The :code:`safe-transfer` script in the :code:`/Shared` directory.
 
