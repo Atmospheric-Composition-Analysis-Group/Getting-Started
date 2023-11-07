@@ -21,6 +21,7 @@ Data Transfer between Active and Archive
    * File status can be checked by: :code:`mmlsattr -L $FILE_PATH`, where :code:`Misc attributes` of :code:`ARCHIVE OFFLINE` means the file has been moved from :code:`cache` to :code:`tape`, and :code:`ARCHIVE` means the file is on :code:`cache`.
    * Globus transfers files on :code:`cache` seamlessly with fast speed, while experiencing unpredictable delays, ranging from several minutes to hours, and probably denoting :code:`endpoint error` for files on :code:`tape`.
    * Manually bringing files from :code:`tape` to :code:`cache` in advance, called rehydration, can speed up Globus transferring a lot, which can be achived by :code:`file` command. Specific usage is running :code:`file $FILE_PATH` from a home node (compute1-client-\*). Wildcards (\*) or rehydrating all files in a directory is also supported for :code:`file` command.
+   * When you restart a Globus transferring task, check :code:`sync` box under :code:`Transfer & Timer Options` on Globus website (it is unchecked by default).
 * The :code:`safe-transfer` script in the :code:`/Shared` directory.
 
 Checking usage
