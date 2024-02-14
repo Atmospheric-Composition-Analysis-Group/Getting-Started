@@ -11,7 +11,6 @@ Links
 
 Good tutorials for getting started with Linux:
 
-* `University of Surry's Unix Tutorial <http://www.ee.surrey.ac.uk/Teaching/Unix/index.html>`_ (tutorial 1-5 are good for our work)
 * `vim tutorial in 8 minutes <https://www.youtube.com/watch?v=ggSyF1SVFr4>`_
 
 Resources for learning about Compute1:
