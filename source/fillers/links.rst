@@ -2,7 +2,7 @@
 
 .. _RIS User Manual: https://docs.ris.wustl.edu/index.html
 
-.. _Open a Ticket: https://jira.wustl.edu/servicedesk/customer/portal/2/create/27
+.. _Open a Ticket: https://washu.atlassian.net/servicedesk/customer/portal/2
 
 .. _RIS Knowledge Base: https://docs.ris.wustl.edu/doc/compute/compute-recipes.html
 
