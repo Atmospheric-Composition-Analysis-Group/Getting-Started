@@ -21,6 +21,7 @@ Atmospheric Composition and Analysis Group
    :caption: Tutorials
 
    using_matlab
+   aws_quickstart
    for_rotation
 
 

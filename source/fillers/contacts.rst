@@ -17,6 +17,8 @@
 
 .. |compute1-getting-started-contact| replace:: `Yidan Tang`_
 
+.. |aws-contact| replace:: `Yidan Tang`_
+
 .. |vpn-contact| replace:: `WashU IT`_
 
 .. |matlab-contact| replace:: `Shin Leong`_

@@ -1,0 +1,12 @@
+# Defining the exact version will make sure things don't break
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - sphinx
+  - sphinx_rtd_theme==1.1.1
+  - sphinx-book-theme
+  - myst-parser
+  - pip
+pip:
+  - readthedocs-sphinx-search==0.1.1
