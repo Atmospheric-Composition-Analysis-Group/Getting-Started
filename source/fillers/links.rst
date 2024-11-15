@@ -6,7 +6,7 @@
 
 .. _RIS Knowledge Base: https://docs.ris.wustl.edu/doc/compute/compute-recipes.html
 
-.. _Compute1 Service Desk: https://jira.wustl.edu/servicedesk/customer/portal/2
+.. _Compute1 Service Desk: https://washu.atlassian.net/servicedesk/customer/portal/2
 
 .. _Compute1 Quick Start: https://confluence.ris.wustl.edu/display/ITKB/Compute+Quick+Start
 
