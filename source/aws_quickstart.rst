@@ -14,7 +14,7 @@ For more information, refer to the GCHP documentation `Set up AWS ParallelCluste
 Request AWS Console Access and CLI Credentials
 ----------------------------------------------------
 
-Before getting started, you'll need to request access to the AWS group account. Submit your request through `WashU ServiceNow <https://it.wustl.edu/items/servicenow/>`_. 
+Before getting started, you'll need to request access to the AWS group account. Submit your request through `WashU ServiceNow <https://it.wustl.edu/items/servicenow/>`_. You can open the request under Existing Cloud Subscription Change. 
 
 Include the following information in your request: 
 
@@ -114,7 +114,9 @@ Alternatively, you can download a template:
 
     $ wget -q https://raw.githubusercontent.com/yidant/GCHP-cloud/refs/heads/main/template/pcluster-template.yaml
 
-Add the AMI ID you wish to use and your key pair to this file. The AMI list can be find here: https://github.com/yidant/GCHP-cloud/blob/main/aws/ami.md
+If you need to use large amount of cores, please refer to this `template <https://github.com/yidant/GCHP-cloud/blob/main/template/pcluster-multiAZ-nht-template.yaml>`_ to enable cross-AZs and disable hyperthreading. 
+
+Make sure you have replaced the AMI ID and key pair with the ones you wish to use. The AMI list can be find here: https://github.com/yidant/GCHP-cloud/blob/main/aws/ami.md
 
 Optionally, you may adjust settings like storage size (EBS volume), compute resources, and network configurations. For details on instance types, refer to `AWS Instance Types <https://aws.amazon.com/ec2/instance-types/>`_. 
 
