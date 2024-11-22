@@ -24,7 +24,7 @@
 :code:`geoschem/gcpy:latest`
    Official GCPy container.
 
-:code:`yidant/my_env:aws_cli`
+:code:`yidant/gchp_env:aws`
    An environment containing AWS CLI packages.
 
 :code:`1dandan/netcdf-utils:latest`
