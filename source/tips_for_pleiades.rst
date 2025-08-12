@@ -99,9 +99,10 @@ Running GCHP on Pleiades
 * Real-time usage of different clusters on NASA Pleiades can be monitored at `NASA System Status`_ (Note it will take several minutes for the website to be updated)
 
 .. note::
-    Another way to check the real-time vacancies of different node types is :code:`node_stats.sh` (already in your PATH)
+    Another way to check the real-time vacancies of different node types is :code:`node_stats.sh` (already in your PATH).
     An example of :code:`node_stats.sh` output:
-    .. code-block:: none
+
+    .. code-block:: console
 
         Nodes currently allocated to the devel queue:
         bro     :   Intel Broadwell Total:  110, Used:   65, Free:   45
@@ -110,11 +111,10 @@ Running GCHP on Pleiades
         ivy     :   Intel Ivybridge Total:  406, Used:  303, Free:  103
         rom_ait :          AMD Rome Total:   69, Used:   69, Free:    0
         sky_ele :     Intel Skylake Total:   20, Used:   10, Free:   10
-
-        SBU rate per node type: bro:1.0 bro_ele:1.0 cas_ait:1.64        cas_gpu:27.04 has:0.8 ivy:0.66 mil_a100:37.86 mil_ait:4.38      rom_ait:4.06 rom_gpu:75.72 sky_ele:1.59 sky_gpu:27.04 
+        SBU rate per node type: bro:1.0 bro_ele:1.0 cas_ait:1.64 cas_gpu:27.04 has:0.8 ivy:0.66 mil_a100:37.86 mil_ait:4.38 rom_ait:4.06 rom_gpu:75.72 sky_ele:1.59 sky_gpu:27.04
         FY2024 SBU cost == $0.22/SBU
 
-    Intel-processor nodes :code:`bro`, :code:`cas_ait`, :code:`has` and :code:`sky_ele` are top choices for GCHP simulations. The detailed descriptions (like core counts per node) can be found at `NASA Node Types`_ in PBS on <Cluster> section.
+    Intel-processor nodes :code:`bro`, :code:`cas_ait`, :code:`has` and :code:`sky_ele` are top choices for GCHP simulations. The detailed descriptions (like core counts per node) can be found at `NASA Node Types`_ in the :code:`PBS on <Cluster>`` section.
 
 * Model inputs :code:`/ExtData`
 
