@@ -14,11 +14,17 @@
 
 .. _LSF Command Reference: https://hpc.llnl.gov/banks-jobs/running-jobs/lsf-commands
 
+.. _GCHP official documentation: https://gchp.readthedocs.io/en/stable/
+
+.. _GCHP operational run script examples: https://github.com/geoschem/geos-chem/tree/dev/no-diff-to-benchmark/run/GCHP/runScriptSamples/operational_examples
+
 .. _NASA Account Setup: https://www.nas.nasa.gov/hecc/support/kb/logging-into-nas-systems-for-the-first-time_539.html
 
 .. _NASA SSH Passthrough: https://www.nas.nasa.gov/hecc/support/kb/setting-up-public-key-ssh-passthrough-94/
 
 .. _NASA System Status: https://www.nas.nasa.gov/hecc/support/system_status.html
+
+.. _NASA Node Types: https://www.nas.nasa.gov/hecc/support/kb/running-jobs-with-pbs-121/
 
 .. _PBS Commands: https://www.nas.nasa.gov/hecc/support/kb/commonly-used-pbs-commands_174.html
 

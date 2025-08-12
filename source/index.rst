@@ -20,8 +20,10 @@ Atmospheric Composition and Analysis Group
    :maxdepth: 1
    :caption: Tutorials
 
-   using_matlab
+   get_started_for_gchp
+   tips_for_pleiades
    aws_quickstart
+   using_matlab
    for_rotation
 
 
@@ -30,7 +32,6 @@ Atmospheric Composition and Analysis Group
    :caption: Other info
 
    compute1_gchp_troubleshooting.md
-   tips_for_pleiades
    b_commands
    storage
    compute1_info
