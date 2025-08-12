@@ -66,7 +66,7 @@ Shiftc data transferring tool
         #BSUB -n 1
         #BSUB -R "rusage[mem=50G] span[ptile=1] select[mem < 500GB] order[-slots]"
         #BSUB -q rvmartin
-        #BSUB -a 'docker(registry.gsc.wustl.edu/sleong/bbftp)'
+        #BSUB -a 'docker(1dandan/netcdf-utils:latest)'
         #BSUB -N
         #BSUB -u <your_wustl_key>@wustl.edu
         #BSUB -o transfer-%J.txt
@@ -74,6 +74,10 @@ Shiftc data transferring tool
         
         cd /my-projects
         sup shiftc pfe:/nobackup/dzhang8/GEOSChem.ACAG.20180101*.nc4 .
+        # try use sup shiftc --hosts=8 --sync -r when you try to transfer a directory containing many large files
+        # --sync will make sure it will not transfer existing files
+        # -r will transfer directories recursively
+        # --hosts=8 will use 8 parallel threads to transfer files
         tail -f /dev/null
 
 
@@ -83,28 +87,52 @@ Shiftc data transferring tool
 Running GCHP on Pleiades
 ------------------------
 
-* GCHP environment: source the environment script by :code:`source /u/dzhang8/gchp-intel.202202.env` to compile or run your GCHP
+* GCHP environment: source the environment script by :code:`source /u/yzhang52/gchp-intel.202304.env` to compile or run your GCHP (Compilation should be done on compute node)
 
-* Example running script can be found at :code:`/u/dzhang8/run.pbs`
+* Example running script can be found at :code:`/u/yzhang52/gchp.run.pbs`
+
+.. note::
+    # PBS -W group_list=<your-project-id>. Project id and usage are shown by :code:`acct_ytd`.
 
 * NASA Pleiades system uses PBS for job scheduling. Commonly used PBS commands can be found at `PBS Commands`_
 
 * Real-time usage of different clusters on NASA Pleiades can be monitored at `NASA System Status`_ (Note it will take several minutes for the website to be updated)
 
+.. note::
+    Another way to check the real-time vacancies of different node types is :code:`node_stats.sh` (already in your PATH)
+    An example of :code:`node_stats.sh` output:
+    .. code-block:: none
+
+        Nodes currently allocated to the devel queue:
+        bro     :   Intel Broadwell Total:  110, Used:   65, Free:   45
+        cas_ait : Intel Cascadelake Total:   64, Used:   11, Free:   53
+        has     :     Intel Haswell Total:  145, Used:   96, Free:   49
+        ivy     :   Intel Ivybridge Total:  406, Used:  303, Free:  103
+        rom_ait :          AMD Rome Total:   69, Used:   69, Free:    0
+        sky_ele :     Intel Skylake Total:   20, Used:   10, Free:   10
+
+        SBU rate per node type: bro:1.0 bro_ele:1.0 cas_ait:1.64        cas_gpu:27.04 has:0.8 ivy:0.66 mil_a100:37.86 mil_ait:4.38      rom_ait:4.06 rom_gpu:75.72 sky_ele:1.59 sky_gpu:27.04 
+        FY2024 SBU cost == $0.22/SBU
+
+    Intel-processor nodes :code:`bro`, :code:`cas_ait`, :code:`has` and :code:`sky_ele` are top choices for GCHP simulations. The detailed descriptions (like core counts per node) can be found at `NASA Node Types`_ in PBS on <Cluster> section.
+
 * Model inputs :code:`/ExtData`
 
-    * There is no :code:`/ExtData` like what we have on Compute1, but there are some customized downloaded inputs as follows:
+.. note::
+    There is no :code:`/ExtData` like what we have on Compute1, but there are some customized downloaded inputs as follows:
 
-       Sebastian has downloaded multiple required inputs at :code:`/nobackup/seastham/ExtData/`
+    Sebastian has downloaded multiple required inputs at :code:`/nobackup/seastham/ExtData/` (no longer available)
        
-       Dandan has downloaded required inputs for simulations in 2018 and 2019 at :code:`/nobackup/dzhang8/ExtData/`
+    Dandan has downloaded required inputs for simulations in 2018 and 2019 at :code:`/nobackup/dzhang8/ExtData/` (no longer available)
+    
+    * You have to download the inputs you need through AWS, WashU data portal or transfer using shiftc to :code:`/nobackup/<your_username>/ExtData/` before running GCHP
 
 Processing outputs on Pleiades
 ------------------------------
 
 * Specific data analysis node: `Lou Data Analysis Nodes`_ (LDAN) can be used for postprocessing data (e.g. GCHP diagonostics)
 
-* Python environment: source the environment script by :code:`source /u/dzhang8/python-gchp.env`
+* Python environment: source the environment script by :code:`source /u/yzhang52/python-gchp.env`
 
 * Need to bring data to disk before processing data on :code:`lfe` to avoid unpredictable time stuck for I/O processes (see `bring data to disk`_)
 

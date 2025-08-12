@@ -9,15 +9,17 @@
 
 .. _Yidan Tang: t.yidan@wustl.edu
 
-.. |slack-contact| replace:: `Yidan Tang`_
+.. _Bill Zhuge: y.zhuge@wustl.edu
 
-.. |glossary-contact| replace:: `Yidan Tang`_
+.. |slack-contact| replace:: `Bill Zhuge`_
 
-.. |this-site-contact| replace:: `Yidan Tang`_
+.. |glossary-contact| replace:: `Bill Zhuge`_
 
-.. |compute1-getting-started-contact| replace:: `Yidan Tang`_
+.. |this-site-contact| replace:: `Bill Zhuge`_
 
-.. |aws-contact| replace:: `Yidan Tang`_
+.. |compute1-getting-started-contact| replace:: `Bill Zhuge`_
+
+.. |aws-contact| replace:: `Bill Zhuge`_
 
 .. |vpn-contact| replace:: `WashU IT`_
 

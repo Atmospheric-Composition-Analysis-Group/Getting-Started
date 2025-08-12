@@ -58,7 +58,7 @@ After installation, configure the AWS CLI with your account credentials.
 3. **Install AWS ParallelCluster with a specific version**
 
 .. note::
-If you're using an AMI created with AWS ParallelCluster 3.7.0, ensure you install the matching version. Check the `AMI list <https://github.com/yidant/GCHP-cloud/blob/main/aws/ami.md>`_ in advance. 
+    If you're using an AMI created with AWS ParallelCluster 3.7.0, ensure you install the matching version. Check the `AMI list <https://github.com/yidant/GCHP-cloud/blob/main/aws/ami.md>`_ in advance. 
 
 .. code-block:: console
     
