@@ -36,5 +36,3 @@ AWS (Module/Spack-Based)
 To get started with AWS, follow our :ref:`AWS Quick Start Guide <aws_quickstart>`.
 
 Similar to Compute2, AWS deployments require loading the environment through module or Spack rather than using pre-built Docker images. Consult the `GCHP operational run script examples`_ for platform-specific setup instructions.
-
-
