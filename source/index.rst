@@ -14,7 +14,7 @@ Atmospheric Composition and Analysis Group
    getting_started/first_time_setup
    getting_started/submitting_a_job
    getting_started/next_steps
-
+   getting_started/setup_public_key
 
 .. toctree::
    :maxdepth: 1
