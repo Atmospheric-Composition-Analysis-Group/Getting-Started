@@ -17,4 +17,5 @@ Compute1 errors/issues        |ris-open-a-ticket|
 Logging on to compute1        |ris-open-a-ticket|
 WiFi problems                 `WashU IT`_
 VPN access                    |vpn-contact|
+Technical tools               |technical-tools-contact|
 ============================= ==================================

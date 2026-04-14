@@ -19,7 +19,10 @@ To run GCHP on Compute1 across multiple nodes using MPI, specify the appropriate
    An environment with ESMF v8.0.0 to support compiling/running GCHP v13 simulations based on Intel compilers.
 
 :code:`1dandan/gchp-esmf8.3:latest`
-   An environment with ESMF v8.3.1 to support GCHP v14 simulations based on Intel compilers.
+   An environment with ESMF v8.3.1 to support GCHP v14 (< 14.7) simulations based on Intel compilers.
+
+:code:`yuanjian.z/gchp_env:latest`
+   An environment with ESMF v8.6.1 to support GCHP v14 (>= 14.7) simulations based on Intel compilers.
 
 **Important:** Starting with GCHP v14.3.0, the introduction of Cloud-J as a submodule requires manually setting stack memory to unlimited in a separate MPI-launched bash script. For details, see the related `GCHP pull request <https://github.com/geoschem/geos-chem/pull/2988>`_.
 
@@ -35,4 +38,6 @@ AWS (Module/Spack-Based)
 
 To get started with AWS, follow our :ref:`AWS Quick Start Guide <aws_quickstart>`.
 
-Similar to Compute2, AWS deployments require loading the environment through module or Spack rather than using pre-built Docker images. Consult the `GCHP operational run script examples`_ for platform-specific setup instructions.
+Consult `AWSGuide`_ by `Laura Yang`_ for reference for picking up shared cluster maintained |technical-tools-contact|.
+
+Also consult the `GCHP operational run script examples`_ for platform-specific setup instructions.

@@ -1,2 +1,4 @@
 build/
 html/
+.DS_Store
+Claude.md

@@ -2,19 +2,19 @@
 
 .. include:: /fillers/contacts.rst
 
-.. _using-matlab:
+.. _matlab:
 
-Using MatLab
+MATLAB
 ============
 
-For help with running MatLab on Compute1, you can contact |matlab-contact|.
+For help with running MATLAB on Compute1, you can contact |matlab-contact|.
 
 
-Set up the MatLab license
+Set up the MATLAB license
 -------------------------
 
-Prerequisite for using MatLab is to setup the MatLab license. Shown below is the step that must be
-taken to setup the license for MatLab. You only need to set it up one time.
+Prerequisite for using MATLAB is to setup the MATLAB license. Shown below is the step that must be
+taken to setup the license for MATLAB. You only need to set it up one time.
 
 SSH in to Compute1:
 
@@ -73,7 +73,7 @@ Use software modules to load the environment for running MATLAB
    matlab matlab_R2019b
    
 The matlab module is a short-cut to the latest version. If you wanted to use a specific 
-version, you’ll do:
+version, you'll do:
    
 .. code-block:: none
 

@@ -2,10 +2,10 @@
 
 .. include:: /fillers/contacts.rst
 
-For Rotation Students
+Basic plotting
 =====================
-Depending on the project, you may want to make maps, scatter plots, or animations using Python or MatLab. Below are some example scripts. You can run your scripts on your local machine or :ref:`on Compute1 <running-scripts-on-compute1>` .
-For help, contact any current doctoral students. 
+Depending on the project, you may want to make maps, scatter plots, or animations using Python or MATLAB. Below are some example scripts. You can run your scripts on your local machine or :ref:`on Compute1 <running-scripts-on-compute1>` .
+For help, contact any current doctoral students.
 
 Example Python scripts
 ----------------------
@@ -152,14 +152,14 @@ Script to make scatter plots comparing simulations to observations:
 
 
 
-Example MatLab scripts
+Example MATLAB scripts
 ----------------------
-Matlab provides many powerful toolboxes and built-in functions, which are well documented on its `website <https://www.mathworks.com/products.html?s_tid=gn_ps>`_. You can also use the :code:`help` function to look up the definition and examples of a built-in function. 
-For example, type :code:`help interp2` in your command window to learn about the `interp2 <https://www.mathworks.com/help/matlab/ref/interp2.html?s_tid=srchtitle_interp2_1>`_ funciton, which is commonly used for mapping.
+MATLAB provides many powerful toolboxes and built-in functions, which are well documented on its `website <https://www.mathworks.com/products.html?s_tid=gn_ps>`_. You can also use the :code:`help` function to look up the definition and examples of a built-in function. 
+For example, type :code:`help interp2` in your command window to learn about the `interp2 <https://www.mathworks.com/help/matlab/ref/interp2.html?s_tid=srchtitle_interp2_1>`_ function, which is commonly used for mapping.
 
 Example script to make maps:
 
-.. code-block:: MatLab
+.. code-block:: MATLAB
 
     clear % clear variables in workspace, comment out if you don't want to do so
     close all % close all figure windows, comment out if you don't want to do so
@@ -233,4 +233,4 @@ Running your scripts on Compute1
 You can run your python scripts on compute1 interactively or on the background by submitting an interactive or batch job using the :code:`geoschem/gcpy:latest` docker. 
 Refer to :ref:`Learn to use Compute1 <learn-to-use-compute1>` for more instructions.
 
-To run MatLab on Compute1, refer to :ref:`Using MatLab <using-matlab>`.
+To run MATLAB on Compute1, refer to :ref:`MATLAB <matlab>`.

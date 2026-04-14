@@ -11,6 +11,10 @@
 
 .. _Bill Zhuge: y.zhuge@wustl.edu
 
+.. _Yuanjian Zhang: yuanjian.z@wustl.edu
+
+.. _Laura Yang: lauray@wustl.edu
+
 .. |slack-contact| replace:: `Bill Zhuge`_
 
 .. |glossary-contact| replace:: `Bill Zhuge`_
@@ -24,3 +28,5 @@
 .. |vpn-contact| replace:: `WashU IT`_
 
 .. |matlab-contact| replace:: `Shin Leong`_
+
+.. |technical-tools-contact| replace:: `Yuanjian Zhang`_
