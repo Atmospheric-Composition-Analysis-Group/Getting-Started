@@ -9,31 +9,36 @@ Atmospheric Composition and Analysis Group
    :numbered:
    :caption: For new members
 
-   getting_started/join_slack
-   getting_started/get_compute1_access
-   getting_started/first_time_setup
-   getting_started/submitting_a_job
-   getting_started/next_steps
-   getting_started/setup_public_key
+   for_new_members/join_slack
+   for_new_members/get_compute1_access
+   for_new_members/setup-public-key
+   for_new_members/first_time_setup
+   for_new_members/learn_to_use_compute1
+   for_new_members/next_steps
 
 .. toctree::
    :maxdepth: 1
-   :caption: Tutorials
+   :caption: Platforms
 
-   get_started_for_gchp
-   tips_for_pleiades
-   aws_quickstart
-   using_matlab
-   for_rotation
+   platforms/get_started_for_gchp
+   platforms/tips_for_pleiades
+   platforms/aws_quickstart
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Tools & Examples
+
+   tools_and_examples/matlab
+   tools_and_examples/gcpm
+   tools_and_examples/basic_plotting
 
 .. toctree::
    :maxdepth: 1
    :caption: Other info
 
-   compute1_gchp_troubleshooting.md
-   b_commands
-   storage
-   compute1_info
-   glossary
-   contacts
+   other_info/compute1_gchp_troubleshooting.md
+   other_info/b_commands
+   other_info/storage
+   other_info/compute1_info
+   other_info/glossary
+   other_info/contacts

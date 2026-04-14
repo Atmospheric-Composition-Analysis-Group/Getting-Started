@@ -44,6 +44,8 @@
 
 .. _https://it.wustl.edu/items/connect/: https://it.wustl.edu/items/connect/
 
+.. _AWSGuide: https://www.notion.so/AWS-Setup-Guide-281ee5c2ae2c8093aaede6957deb858d?source=copy_link
+
 .. |vpn-instructions| replace:: `https://it.wustl.edu/items/connect/`_
 
 .. |ris-user-manual| replace:: `RIS User Manual`_
