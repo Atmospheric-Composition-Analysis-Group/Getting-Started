@@ -9,6 +9,8 @@
 .. :code:`registry.gsc.wustl.edu/sleong/esm:intel-2021.1.2`
 ..    A general environment for ACAG based on Intel compilers. It contains GEOS-Chem/GCHP dependencies, NetCDF operators, etc.
 
+:code:`billzhuge/geos-chem-deps:14.7-lsf`
+   An environment with GEOS-Chem v14.7 dependencies based on Intel compilers. 
 :code:`1dandan/gchp-esmf8.0:latest`
    An environment with ESMF v8.0.0 to support compiling/running GCHP v13 simulations based on Intel compilers.
 
