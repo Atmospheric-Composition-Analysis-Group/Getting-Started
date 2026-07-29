@@ -15,6 +15,9 @@ Compute1 (Docker-Based)
 
 To run GCHP on Compute1 across multiple nodes using MPI, specify the appropriate pre-built Intel compiler Docker image in your LSF script according to your GCHP version requirements.
 
+:code:`billzhuge/geos-chem-deps:14.7-lsf`
+   An environment with GEOS-Chem v14.7 dependencies based on Intel compilers.
+   
 :code:`1dandan/gchp-esmf8.0:latest`
    An environment with ESMF v8.0.0 to support compiling/running GCHP v13 simulations based on Intel compilers.
 
