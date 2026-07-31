@@ -3,7 +3,8 @@
 Tips for NASA Pleiades
 ======================
 
-This section provides general tips for setting up NASA NAS account and running GCHP on Pleiades.
+This section provides general tips for setting up NASA NAS account and running GCHP on Pleiades. 
+For a more detailed guide, please refer to `NASA_Cluster`_ maintained by `Laura Yang`_.
 
 Account setup
 ----------------
