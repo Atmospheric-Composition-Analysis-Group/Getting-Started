@@ -43,7 +43,7 @@ It is a basic interactive job. Here is its contents:
    #BSUB -n 8
    #BSUB -R "rusage[mem=40000] span[hosts=1]"
    #BSUB -q rvmartin-interactive
-   #BSUB -a 'docker(registry.gsc.wustl.edu/sleong/esm:intel-2021.1.2)'
+   #BSUB -a 'docker(billzhuge/geos-chem-deps:14.7-ucx)'
 
    cd /my-projects
    bash
@@ -54,7 +54,7 @@ The lines at the top, starting with :code:`#BSUB`, are specifying LSF options:
 * :code:`-n 8` tells LSF this job needs 8 cores
 * :code:`-R "rusage[mem=40000] span[hosts=1]"` tells LSF this job needs 40 GB of memory and that all 8 cores should land on the same :term:`host` (exec node)
 * :code:`-q rvmartin-interactive` tells LSF which :term:`queue` this job should be put in
-* :code:`-a 'docker(registry.gsc.wustl.edu/sleong/esm:intel-2021.1.2)'` tells LSF which :term:`container` this job should be ran inside
+* :code:`-a 'docker(billzhuge/geos-chem-deps:14.7-ucx)'` tells LSF which :term:`container` this job should be ran inside
 
 The other lines are the commands that are executed when the job lands on the exec node. This job
 navigates to your :term:`project directory` and starts a bash terminal (hence it being an interactive job):
@@ -74,7 +74,7 @@ batch job to run a GEOS-Chem Classic simulation:
    #BSUB -n 16
    #BSUB -W 168:00
    #BSUB -R "rusage[mem=40000] span[hosts=1]"
-   #BSUB -a 'docker(registry.gsc.wustl.edu/sleong/esm:intel-2021.1.2)'
+   #BSUB -a 'docker(billzhuge/geos-chem-deps:14.7-ucx)'
    #BSUB -J "Example 1-year 2x2.5 GEOS-Chem simulation"
    #BSUB -N
    #BSUB -u wustlkey@wustl.edu
@@ -125,7 +125,7 @@ When your job start, you might see output like this:
    <<Waiting for dispatch ...>>
    <<Starting on compute1-exec-18.ris.wustl.edu>>
    Using default tag: latest
-   latest: Pulling from sleong/base-engineering
+   14.7-ucx: Pulling from billzhuge/geos-chem-deps
    f34b00c7da20: Pull complete 
    b8eeb48b5be7: Extracting [================>                                  ]  231.2MB/694MB
    7f625b94b369: Download complete 
